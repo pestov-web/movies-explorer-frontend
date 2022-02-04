@@ -1,0 +1,42 @@
+.profile__button {
+  display: none;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding-left: 11px;
+  align-items: center;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 12px;
+  color: #000000;
+  background: #ffffff;
+  box-shadow: 0 3px 14px rgba(0, 0, 0, 0.08);
+  border-radius: 40px;
+  width: 100px;
+  height: 32px;
+}
+
+.profile__ico {
+  box-sizing: border-box;
+  background: no-repeat center
+    url("../../images/burger-menu/burger-ico-min.svg") #f9f9f9;
+  background-size: 12px 12px;
+  height: 26px;
+  width: 26px;
+  border-radius: 50px;
+  margin-right: 3px;
+}
+
+.profile__button_place_landing {
+  background: #f3c1f8;
+}
+
+.profile__ico_place_landing {
+  background-color: #edadf3;
+}
+
+@media screen and (min-width: 1024px) {
+  .profile__button {
+    display: flex;
+  }
+}

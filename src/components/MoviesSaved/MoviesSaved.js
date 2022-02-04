@@ -1,9 +1,9 @@
-import "./Movies.css";
+import "./MoviesSaved.css";
 import Search from "../Search/Search";
 
 import FilmsList from "../FilmsList/FilmsList";
 
-function Movies() {
+function MoviesSaved() {
   return (
     <main>
       <Search />
@@ -12,4 +12,4 @@ function Movies() {
   );
 }
 
-export default Movies;
+export default MoviesSaved;

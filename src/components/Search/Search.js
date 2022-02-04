@@ -11,7 +11,7 @@ function Search() {
             placeholder="Фильм"
             type="search"
           />
-          <button className="search__form-submit" type="submit"></button>
+          <button className="search__form-submit button" type="submit"></button>
         </form>
       </div>
 

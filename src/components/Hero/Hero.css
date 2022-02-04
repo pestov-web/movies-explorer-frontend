@@ -27,6 +27,7 @@
 @media screen and (min-width: 640px) {
   .hero {
     min-height: 844px;
+    overflow: hidden;
   }
   .hero__title {
     font-size: 40px;

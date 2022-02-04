@@ -4,12 +4,12 @@ function Menu() {
   return (
     <ul className="menu">
       <li className="menu__item">
-        <Link to="#" className="menu__link link">
+        <Link to="/signup" className="menu__link link">
           Регистрация
         </Link>
       </li>
       <li className="menu__item">
-        <Link to="#" className="menu__button button">
+        <Link to="/signin" className="menu__button button">
           Войти
         </Link>
       </li>

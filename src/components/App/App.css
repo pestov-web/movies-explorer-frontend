@@ -21,3 +21,22 @@
 .link:hover {
   opacity: 0.7;
 }
+.link_active {
+  position: relative;
+}
+.link_active::after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-bottom: 2px solid #000000;
+  width: 100%;
+  top: 28px;
+}
+.hidden {
+  display: none;
+}
+@media screen and (min-width: 640px) {
+  .link_active::after {
+    top: 25px;
+  }
+}

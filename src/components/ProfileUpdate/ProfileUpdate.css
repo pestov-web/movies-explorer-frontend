@@ -1,0 +1,139 @@
+.profile-update {
+  display: flex;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+  flex-direction: column;
+  padding: 0 30px;
+  max-width: 410px;
+  margin: 0 auto;
+}
+
+.profile-update__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  padding-top: 54px;
+  text-align: center;
+}
+.profile-update__form {
+  display: flex;
+  flex-direction: column;
+  max-width: 410px;
+  width: 100%;
+  align-items: center;
+  gap: 28px;
+  position: relative;
+  padding-top: 61px;
+}
+.profile-update__wrapper {
+  min-width: 260px;
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+.profile-update__form::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #e8e8e8;
+  width: 100%;
+  position: absolute;
+  top: 94px;
+}
+.profile-update__input {
+  box-sizing: border-box;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  max-width: 410px;
+  height: 20px;
+  width: 100%;
+  position: relative;
+  padding: 0;
+  border: none;
+  outline: none;
+  background: #fff;
+}
+
+.profile-update__input::placeholder {
+  color: #000000;
+}
+
+.profile-update__input-error {
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  color: #ff4062;
+  position: absolute;
+  top: 20px;
+}
+
+.profile-update__userinfo {
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  padding-top: 4px;
+}
+
+.profile-update__button-submit {
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  padding-top: 348px;
+}
+
+.profile-update__button-logout {
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ff4062;
+  padding-top: 15px;
+}
+
+@media screen and (min-width: 640px) {
+  .profile-update__title {
+    padding-top: 220px;
+  }
+
+  .profile-update__form {
+    padding-top: 77px;
+  }
+
+  .profile-update__form::after {
+    top: 110px;
+  }
+  .profile-update__button-submit {
+    padding-top: 179px;
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .profile-update__button-logout {
+    font-size: 13px;
+    line-height: 16px;
+    padding-bottom: 265px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .profile-update__title {
+    padding-top: 58px;
+  }
+
+  .profile-update__form {
+    padding-top: 104px;
+  }
+
+  .profile-update__form::after {
+    top: 137px;
+  }
+  .profile-update__button-submit {
+    padding-top: 189px;
+  }
+}
