@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dc05a32-0a8d-49d4-94c9-ba673e49edc8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/BurgerButton/BurgerButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BurgerButton/BurgerButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BurgerMenu/BurgerMenu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/BurgerMenu/BurgerMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FilmsCard/FilmsCard.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FilmsList/FilmsList.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/FilmsList/FilmsList.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/ModalMenu.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Modal/ModalMenu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MoreButton/MoreButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MoreButton/MoreButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MoviesSaved/MoviesSaved.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/MoviesSaved/MoviesSaved.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NotFound/NotFound.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/NotFound/NotFound.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProfileButton/ProfileButton.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProfileButton/ProfileButton.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProfileUpdate/ProfileUpdate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ProfileUpdate/ProfileUpdate.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/burger-menu/burger-ico-min.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/images/modal/close-min.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/validation-schemas.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthForm/AuthForm.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthForm/AuthForm.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthForm/AuthForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthForm/AuthForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Films/Films.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilmsCard/FilmsCard.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Films/Films.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Hero/Hero.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Hero/Hero.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Menu/Menu.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Menu/Menu.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/Search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/adptive-menu/adptive-menu.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +58,7 @@
       <workItem from="1643013195588" duration="2692000" />
       <workItem from="1643703344185" duration="813000" />
       <workItem from="1643706054298" duration="32451000" />
-      <workItem from="1643862247981" duration="50927000" />
+      <workItem from="1643862247981" duration="51134000" />
     </task>
     <servers />
   </component>
