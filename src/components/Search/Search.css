@@ -15,7 +15,7 @@
   padding-top: 49px;
 }
 
-.search__form-wrapper {
+.search__wrapper {
   position: relative;
   width: 100%;
 }
@@ -64,7 +64,7 @@
   background-size: 34px 34px;
 }
 
-.search__checkbox-wrapper {
+.search__checkbox {
   margin-top: 42px;
 }
 

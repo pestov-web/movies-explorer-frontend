@@ -1,7 +1,7 @@
 import "./Logo.css";
 
 function Logo() {
-  return <div className="logo"></div>;
+  return <a href="/" className="logo link"></a>;
 }
 
 export default Logo;

@@ -1,9 +1,9 @@
-.auth-form__wrapper {
+.auth-form {
   display: flex;
   flex-direction: column;
   padding: 56px 30px 0;
 }
-.auth-form {
+.auth-form__form {
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -21,7 +21,7 @@
   padding-bottom: 45px;
 }
 
-.auth-form__input-wrapper {
+.auth-form__wrapper {
   width: 100%;
   padding-top: 32px;
   position: relative;
@@ -101,10 +101,10 @@
 }
 
 @media screen and (min-width: 640px) {
-  .auth-form__wrapper {
+  .auth-form {
     padding-top: 232px;
   }
-  .auth-form {
+  .auth-form__form {
     align-items: start;
   }
   .auth-form__title {
@@ -127,7 +127,7 @@
   }
 }
 @media screen and (min-width: 1024px) {
-  .auth-form__wrapper {
+  .auth-form {
     padding-top: 70px;
   }
 }

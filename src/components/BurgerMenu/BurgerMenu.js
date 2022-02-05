@@ -13,8 +13,8 @@ function BurgerMenu({
 }) {
   return (
     <>
-      <div className="burger-menu__wrapper">
-        <ul className="burger-menu">
+      <div className="burger-menu">
+        <ul className="burger-menu__list">
           <li className="burger-menu__item">
             <NavLink
               to="/movies"
@@ -34,7 +34,7 @@ function BurgerMenu({
             </NavLink>
           </li>
         </ul>
-        <ProfileButton currenPath={currenPath} />
+        <ProfileButton />
       </div>{" "}
       <BurgerButton currenPath={currenPath} openModal={openModal} />
       <ModalMenu

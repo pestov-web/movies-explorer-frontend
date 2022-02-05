@@ -16,7 +16,7 @@ function AuthForm({
   validationSchema,
 }) {
   return (
-    <div className="auth-form__wrapper">
+    <div className="auth-form">
       <Formik
         initialValues={{
           name: "",
@@ -28,11 +28,11 @@ function AuthForm({
         }}
       >
         {({ errors, touched }) => (
-          <Form className="auth-form">
+          <Form className="auth-form__form">
             <Logo />
             <h1 className="auth-form__title">{formTitle}</h1>
             {currenPath === "/signup" ? (
-              <div className="auth-form__input-wrapper">
+              <div className="auth-form__wrapper">
                 <label htmlFor="name" className="auth-form__label">
                   Имя
                 </label>{" "}
@@ -47,7 +47,7 @@ function AuthForm({
               </div>
             ) : null}
 
-            <div className="auth-form__input-wrapper">
+            <div className="auth-form__wrapper">
               <label htmlFor="email" className="auth-form__label">
                 E-mail
               </label>{" "}
@@ -61,7 +61,7 @@ function AuthForm({
                 <span className="auth-form__error">{errors.email}</span>
               ) : null}
             </div>
-            <div className="auth-form__input-wrapper">
+            <div className="auth-form__wrapper">
               <label htmlFor="password" className="auth-form__label">
                 Пароль
               </label>{" "}

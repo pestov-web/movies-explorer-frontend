@@ -3,11 +3,11 @@ import Search from "../Search/Search";
 
 import FilmsList from "../FilmsList/FilmsList";
 
-function Movies() {
+function Movies({ currenPath }) {
   return (
     <main>
       <Search />
-      <FilmsList />
+      <FilmsList currenPath={currenPath} />
     </main>
   );
 }

@@ -27,14 +27,6 @@
   margin-right: 3px;
 }
 
-.profile__button_place_landing {
-  background: #f3c1f8;
-}
-
-.profile__ico_place_landing {
-  background-color: #edadf3;
-}
-
 @media screen and (min-width: 1024px) {
   .profile__button {
     display: flex;

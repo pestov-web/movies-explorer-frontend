@@ -2,14 +2,15 @@ import "./FilmsList.css";
 
 import MoreButton from "../MoreButton/MoreButton";
 import FilmsCard from "../FilmsCard/FilmsCard";
+import React from "react";
 
-function FilmsList() {
+function FilmsList({ currenPath }) {
   return (
     <section className="films">
       <ul className="films__cards">
         <FilmsCard />
       </ul>
-      <MoreButton />
+      {currenPath === "/movies" ? <MoreButton /> : null}
     </section>
   );
 }

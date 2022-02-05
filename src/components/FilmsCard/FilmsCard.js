@@ -9,79 +9,49 @@ function FilmsCard() {
   return (
     <>
       <li className="films__card">
-        <img src={img1} alt="" className="films__image" />
+        <img
+          src={img1}
+          alt="Баннер 33 слова о дизайне"
+          className="films__image"
+        />
         <h2 className="films__title">33 слова о дизайне</h2>
-        <button className="films__add-button">
-          <svg
-            className="films__button-image"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.273 0C6.273 0 5.545.523 5 1.09 4.455.567 3.727 0 2.727 0 1.137 0 0 1.264 0 2.833c0 .785.318 1.482.91 1.962L5 8.5l4.09-3.705c.546-.523.91-1.177.91-1.962C10 1.264 8.864 0 7.273 0z"
-              fill="#FF4062"
-            />
-          </svg>
-        </button>
+        <button className="films__add-button films__add-button_checked button"></button>
         <time className="film__duration">1ч 42м</time>
       </li>
       <li className="films__card">
-        <img src={img2} alt="" className="films__image" />
+        <img
+          src={img2}
+          alt="Баннер Киноальманах «100 лет дизайна»"
+          className="films__image"
+        />
         <h2 className="films__title">Киноальманах «100 лет дизайна»</h2>
-        <button className="films__add-button">
-          <svg
-            className="films__button-image"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M7.273 0C6.273 0 5.545.523 5 1.09 4.455.567 3.727 0 2.727 0 1.137 0 0 1.264 0 2.833c0 .785.318 1.482.91 1.962L5 8.5l4.09-3.705c.546-.523.91-1.177.91-1.962C10 1.264 8.864 0 7.273 0z" />
-          </svg>
-        </button>
+        <button className="films__add-button films__add-button_checked button"></button>
         <time className="film__duration">1ч 42м</time>
       </li>
       <li className="films__card">
-        <img src={img3} alt="" className="films__image" />
+        <img
+          src={img3}
+          alt="Баннер В погоне за Бенкси"
+          className="films__image"
+        />
         <h2 className="films__title">В погоне за Бенкси</h2>
-        <button className="films__add-button">
-          <svg
-            className="films__button-image"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M7.273 0C6.273 0 5.545.523 5 1.09 4.455.567 3.727 0 2.727 0 1.137 0 0 1.264 0 2.833c0 .785.318 1.482.91 1.962L5 8.5l4.09-3.705c.546-.523.91-1.177.91-1.962C10 1.264 8.864 0 7.273 0z" />
-          </svg>
-        </button>
+        <button className="films__add-button button"></button>
         <time className="film__duration">1ч 42м</time>
       </li>
       <li className="films__card">
-        <img src={img4} alt="" className="films__image" />
+        <img
+          src={img4}
+          alt="Баннер Баския: Взрыв реальности"
+          className="films__image"
+        />
         <h2 className="films__title">Баския: Взрыв реальности</h2>
-        <button className="films__add-button">
-          <svg
-            className="films__button-image"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M7.273 0C6.273 0 5.545.523 5 1.09 4.45.567 3.727 0 2.727 0 1.137 0 0 1.264 0 2.833c0 .785.318 1.482.91 1.962L5 8.5l4.09-3.705c.546-.523.91-1.177.91-1.962C10 1.264 8.864 0 7.273 0z"
-              fill="#FF4062"
-            />
-          </svg>
-        </button>
+        <button className="films__add-button button"></button>
         <time className="film__duration">1ч 42м</time>
       </li>
       <li className="films__card">
-        <img src={img5} alt="" className="films__image" />
+        <img src={img5} alt="Баннер Бег это свобода" className="films__image" />
         <h2 className="films__title">Бег это свобода</h2>
-        <button className="films__add-button">
-          <svg
-            className="films__button-image"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path d="M7.273 0C6.273 0 5.545.523 5 1.09 4.455.567 3.727 0 2.727 0 1.137 0 0 1.264 0 2.833c0 .785.318 1.482.91 1.962L5 8.5l4.09-3.705c.546-.523.91-1.177.91-1.962C10 1.264 8.864 0 7.273 0z" />
-          </svg>
-        </button>
+        <button className="films__add-button films__add-button_checked button"></button>
         <time className="film__duration">1ч 42м</time>
       </li>
     </>

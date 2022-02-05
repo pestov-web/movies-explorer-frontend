@@ -49,10 +49,10 @@ function App() {
           <Main />
         </Route>
         <Route exact path="/movies">
-          <Movies />
+          <Movies currenPath={location.pathname} />
         </Route>
         <Route exact path="/saved-movies">
-          <MoviesSaved />
+          <MoviesSaved currenPath={location.pathname} />
         </Route>
         <Route exact path="/profile">
           <ProfileUpdate validationSchema={validateUserUpdate} />

@@ -6,22 +6,28 @@ function Portfolio() {
       <h2 className="portfolio__title">Портфолио</h2>
       <ul className="portfolio__list">
         <li className="portfolio__item">
-          <a href="" className="portfolio__link link">
+          <a
+            href="https://github.com/pestov-web/how-to-learn"
+            className="portfolio__link link"
+          >
             Статичный сайт
+            <div className="portfolio__link-icon"></div>
           </a>
-          <div className="portfolio__link-icon"></div>
         </li>
         <li className="portfolio__item">
-          <a href="" className="portfolio__link link">
+          <a
+            href="https://github.com/pestov-web/russian-travel"
+            className="portfolio__link link"
+          >
             Адаптивный сайт
+            <div className="portfolio__link-icon"></div>
           </a>
-          <div className="portfolio__link-icon"></div>
         </li>
         <li className="portfolio__item">
-          <a href="" className="portfolio__link link">
+          <a href="https://pestov-web.ru/" className="portfolio__link link">
             Одностраничное приложение
+            <div className="portfolio__link-icon"></div>
           </a>
-          <div className="portfolio__link-icon"></div>
         </li>
       </ul>
     </section>

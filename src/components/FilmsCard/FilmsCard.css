@@ -33,7 +33,19 @@
   bottom: 45px;
   right: 0px;
   cursor: pointer;
-  background: #f9f9f9;
+
+  background: #f9f9f9 url("../../images/films/add-button-white.svg") no-repeat
+    7px 7px;
+  background-size: 15px 15px;
+}
+
+.films__add-button_checked {
+  background: #f9f9f9 url("../../images/films/add-button.svg") no-repeat 7px 8px;
+  background-size: 10px 9px;
+}
+.films__add-button_checked:hover {
+  background: #f9f9f9 url("../../images/films/close-min.svg") no-repeat 7px 7px;
+  background-size: 10px 10px;
 }
 
 .films__button-image {

@@ -24,12 +24,22 @@ function Profile() {
 
           <ul className="profile__social">
             <li className="profile__social-item">
-              <a href="" className="profile__social-link link">
+              <a
+                href="https://www.facebook.com/mindwrk/"
+                target="_blank"
+                className="profile__social-link link"
+                rel="noreferrer"
+              >
                 Facebook
               </a>
             </li>
             <li className="profile__social-item">
-              <a href="" className="profile__social-link link">
+              <a
+                href="https://github.com/pestov-web"
+                target="_blank"
+                className="profile__social-link link"
+                rel="noreferrer"
+              >
                 Github
               </a>
             </li>

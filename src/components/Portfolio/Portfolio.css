@@ -40,13 +40,15 @@
   line-height: 28px;
   letter-spacing: -0.04em;
   color: #000000;
+  width: 100%;
+  position: relative;
 }
 
 .portfolio__link-icon {
   background: no-repeat url("../../images/portfolio/link-ico.svg");
   height: 28px;
   width: 18px;
-  position: relative;
+  position: absolute;
   top: 6px;
   right: -3px;
 }
