@@ -1,0 +1,94 @@
+.films__card {
+  margin: 0;
+  position: relative;
+  width: calc(100% / 12 * 12);
+}
+.films__image {
+  min-height: 151px;
+  min-width: 300;
+  width: 100%;
+}
+.films__title {
+  margin: 0;
+  padding-top: 12px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+}
+.films__title::after {
+  content: "";
+  display: block;
+  border-bottom: 1px solid #e8e8e8;
+  width: 100%;
+  padding-top: 29px;
+}
+.films__add-button {
+  border: none;
+  border-radius: 36px;
+  outline: none;
+  padding: 0;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  bottom: 45px;
+  right: 0px;
+  cursor: pointer;
+
+  background: #f9f9f9 url("../../images/films/add-button-white.svg") no-repeat
+    7px 7px;
+  background-size: 15px 15px;
+}
+
+.films__add-button_checked {
+  background: #f9f9f9 url("../../images/films/add-button.svg") no-repeat 7px 8px;
+  background-size: 10px 9px;
+}
+.films__add-button_checked:hover {
+  background: #f9f9f9 url("../../images/films/close-min.svg") no-repeat 7px 7px;
+  background-size: 10px 10px;
+}
+
+.films__button-image {
+  fill: #ffffff;
+  width: 10px;
+  height: 9px;
+}
+
+.film__duration {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #a0a0a0;
+}
+
+@media screen and (min-width: 640px) {
+  .films__card {
+    width: calc(100% / 12 * 6 - 15px);
+  }
+  .films__title {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .film__duration {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .films__card {
+    width: calc(100% / 12 * 4 - 20px);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .films__card {
+    width: calc(100% / 12 * 3 - 15px);
+  }
+  .films__title {
+    font-size: 13px;
+    line-height: 16px;
+  }
+  .film__duration {
+    font-size: 11px;
+    line-height: 13px;
+  }
+}

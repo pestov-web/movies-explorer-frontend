@@ -1,0 +1,154 @@
+.about {
+  padding: 0 18px;
+}
+
+.about__title {
+  margin: 0;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 22px;
+  letter-spacing: -0.04em;
+}
+
+.about__subtitle {
+  margin: 0;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 16px;
+  padding: 15px 0 57px;
+}
+
+.about__schema {
+  display: flex;
+  padding: 3px 0 93px;
+  position: relative;
+}
+
+.about__schema-oneweek {
+  display: flex;
+  height: 35px;
+  min-width: 100px;
+  width: 100%;
+  max-width: 200px;
+  background: #000000;
+  color: #ffffff;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  justify-content: center;
+  align-items: center;
+}
+
+.about__schema-oneweek::after {
+  content: "Back-end";
+  display: block;
+  position: absolute;
+  font-weight: normal;
+  font-size: 11px;
+  text-align: center;
+  color: #a0a0a0;
+  top: 48px;
+}
+
+.about__schema-fourweeks {
+  display: flex;
+  height: 35px;
+  min-width: 184px;
+  width: 100%;
+  background: #f2f2f2;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  justify-content: center;
+  align-items: center;
+}
+.about__schema-fourweeks::after {
+  content: "Front-end";
+  display: block;
+  position: absolute;
+  font-weight: normal;
+  font-size: 11px;
+  text-align: center;
+  color: #a0a0a0;
+  top: 48px;
+}
+
+@media screen and (min-width: 640px) {
+  .about {
+    padding: 0 50px;
+  }
+  .about__info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .about__title {
+    width: calc(100% / 12 * 6 - 15px);
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .about__subtitle {
+    width: calc(100% / 12 * 6 - 15px);
+    order: 3;
+    font-size: 12px;
+    line-height: 18px;
+    padding: 22px 0 90px;
+  }
+  .about__schema {
+    padding-bottom: 121px;
+  }
+
+  .about__schema-oneweek {
+    height: 36px;
+    max-width: 140px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .about__schema-oneweek::after {
+    font-size: 14px;
+    top: 52px;
+  }
+  .about__schema-fourweeks {
+    height: 36px;
+    min-width: 428px;
+    font-size: 14px;
+    line-height: 17px;
+    justify-content: center;
+    align-items: center;
+  }
+  .about__schema-fourweeks::after {
+    font-size: 14px;
+    top: 52px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .about {
+    padding: 11px 70px 0;
+  }
+
+  .about__title {
+    width: calc(100% / 12 * 6 - 20px);
+  }
+  .about__subtitle {
+    width: calc(100% / 12 * 6 - 20px);
+    font-size: 14px;
+    line-height: 20px;
+    padding: 26px 0 107px;
+  }
+  .about__schema {
+    padding-bottom: 140px;
+  }
+
+  .about__schema-oneweek {
+    min-width: 228px;
+  }
+  .about__schema-oneweek::after {
+    top: 52px;
+  }
+  .about__schema-fourweeks {
+    min-width: 528px;
+  }
+  .about__schema-fourweeks::after {
+    top: 52px;
+  }
+}

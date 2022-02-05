@@ -1,0 +1,33 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts/Inter/inter.css);
+
+/* page */
+@import url(../blocks/page/page.css);
+
+/* Header */
+@import url(../blocks/header/header.css);
+
+/* Section  */
+@import url(../blocks/section/section.css);
+
+/* Hero */
+@import url(../blocks/hero/hero.css);
+
+/* About */
+@import url(../blocks/about/about.css);
+
+/* Techs */
+@import url(../blocks/techs/techs.css);
+/* Profile */
+@import url(../blocks/profile/profile.css);
+
+/* Portfolio */
+@import url(../blocks/portfolio/portfolio.css);
+
+/* Footer */
+@import url(../blocks/footer/footer.css);
+
+/* Search */
+@import url(../blocks/search/search.css);
+/* checkbox */
+@import url(../blocks/checkbox/checkbox.css);

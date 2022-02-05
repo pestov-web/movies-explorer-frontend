@@ -1,0 +1,133 @@
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  padding: 56px 30px 0;
+}
+.auth-form__form {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0 auto;
+  box-sizing: border-box;
+  max-width: 396px;
+  width: 100%;
+  align-items: center;
+}
+.auth-form__title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+  padding-top: 34px;
+  padding-bottom: 45px;
+}
+
+.auth-form__wrapper {
+  width: 100%;
+  padding-top: 32px;
+  position: relative;
+}
+
+.auth-form__label {
+  font-weight: normal;
+  font-size: 10px;
+  width: 100%;
+  color: #a0a0a0;
+  position: absolute;
+  left: 0;
+  top: 19px;
+}
+.auth-form__input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 46px;
+  border: none;
+  background: #f9f9f9;
+  border-radius: 8px;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 16px;
+  min-width: 260px;
+  padding: 0 0 0 15px;
+  margin-top: 10px;
+}
+
+.auth-form__error {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 12px;
+  color: #ff4062;
+  position: absolute;
+  left: 0;
+  bottom: -13px;
+}
+.auth-form__submit {
+  height: 45px;
+  min-width: 260px;
+  width: 100%;
+  border: none;
+  background: #000000;
+  border-radius: 3px;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 15px;
+  color: #ffffff;
+  cursor: pointer;
+  margin-top: 178px;
+}
+
+.auth-form__goto {
+  display: flex;
+  gap: 7px;
+  padding-top: 14px;
+  width: 100%;
+  justify-content: center;
+}
+.auth-form__goto-text {
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #a0a0a0;
+}
+.auth-form__goto-link {
+  text-decoration: none;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  color: #000000;
+}
+.auth-form__spacer {
+  width: 100%;
+  height: 88px;
+}
+
+@media screen and (min-width: 640px) {
+  .auth-form {
+    padding-top: 232px;
+  }
+  .auth-form__form {
+    align-items: start;
+  }
+  .auth-form__title {
+    padding-top: 24px;
+    padding-bottom: 6px;
+  }
+
+  .auth-form__submit {
+    margin-top: 89px;
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .auth-form__goto {
+    padding-top: 16px;
+  }
+  .auth-form__goto-text,
+  .auth-form__goto-link {
+    font-size: 14px;
+    line-height: 17px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .auth-form {
+    padding-top: 70px;
+  }
+}
