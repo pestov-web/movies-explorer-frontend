@@ -10,7 +10,7 @@ function ProfileUpdate({
 }) {
   return (
     <section className="profile-update">
-      <h1 className="profile-update__title">Привет, Виталий!</h1>
+      <h1 className="profile-update__title">Привет, {currentUser.name}!</h1>
       <Formik
         initialValues={{
           name: '',
