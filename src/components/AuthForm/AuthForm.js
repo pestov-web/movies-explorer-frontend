@@ -14,6 +14,7 @@ function AuthForm({
   linkTo,
   isSignIn,
   validationSchema,
+  onFormSubmit,
 }) {
   return (
     <div className="auth-form">
@@ -21,10 +22,11 @@ function AuthForm({
         initialValues={{
           name: "",
           email: "",
+          password: "",
         }}
         validationSchema={validationSchema}
         onSubmit={(values) => {
-          alert(JSON.stringify(values, null, 2));
+          onFormSubmit(values);
         }}
       >
         {({ errors, touched }) => (

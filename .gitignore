@@ -14,7 +14,7 @@
 # misc
 .DS_Store
 .idea
-.idea/
+.idea/*
 .vscode
 .env.local
 .env.development.local
