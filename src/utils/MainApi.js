@@ -16,7 +16,7 @@ class MainApi {
   }
 
   // регистрируем пользователя
-  register(name, email, password) {
+  register({ name, email, password }) {
     return fetch(`${this._baseUrl}/signup`, {
       method: 'POST',
       headers: this._headers,
@@ -25,7 +25,7 @@ class MainApi {
     }).then(this._handleResponse);
   }
   // авторизация пользователя
-  authorize(email, password) {
+  authorize({ email, password }) {
     return fetch(`${this._baseUrl}/signin`, {
       method: 'POST',
       headers: this._headers,
@@ -44,14 +44,11 @@ class MainApi {
   }
 
   // обновляем информацию о пользователе
-  patchUserInfo(data) {
+  patchUserInfo({ name, email }) {
     return fetch(`${this._baseUrl}/users/me`, {
       method: 'PATCH',
       headers: this._headers,
-      body: JSON.stringify({
-        name: data.name,
-        about: data.about,
-      }),
+      body: JSON.stringify({ name, email }),
       credentials: this._credentials,
     }).then(this._handleResponse);
   }

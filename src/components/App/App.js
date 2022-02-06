@@ -1,25 +1,25 @@
-import React from "react";
-import { Route, Switch, useHistory, useLocation } from "react-router-dom";
+import React from 'react';
+import { Route, Switch, useHistory, useLocation } from 'react-router-dom';
 import {
   validateSignUp,
   validateSignIn,
   validateUserUpdate,
-} from "../../utils/validation-schemas";
+} from '../../utils/validation-schemas';
 
-import Footer from "../Footer/Footer";
-import Header from "../Header/Header";
-import Main from "../Main/Main";
+import Footer from '../Footer/Footer';
+import Header from '../Header/Header';
+import Main from '../Main/Main';
 
-import "./App.css";
-import Movies from "../Movies/Movies";
-import AuthForm from "../AuthForm/AuthForm";
-import MoviesSaved from "../MoviesSaved/MoviesSaved";
-import NotFound from "../NotFound/NotFound";
-import ProfileUpdate from "../ProfileUpdate/ProfileUpdate";
+import './App.css';
+import Movies from '../Movies/Movies';
+import AuthForm from '../AuthForm/AuthForm';
+import MoviesSaved from '../MoviesSaved/MoviesSaved';
+import NotFound from '../NotFound/NotFound';
+import ProfileUpdate from '../ProfileUpdate/ProfileUpdate';
 
 // подключаем контекст
-import { CurrentUserContext } from "../../contexts/CurrentUserContext";
-import mainApi from "../../utils/MainApi";
+import { CurrentUserContext } from '../../contexts/CurrentUserContext';
+import mainApi from '../../utils/MainApi';
 
 function App() {
   const location = useLocation();
@@ -38,18 +38,33 @@ function App() {
     setIsOpen(false);
   }
 
+  // регистрируем пользователя
+  function handleRegister(data) {
+    if (data.name && data.email && data.password) {
+      mainApi
+        .register(data)
+        .then((res) => {
+          if (res) {
+            setLoggedIn(true);
+            history.push('/movies');
+          }
+        })
+        .catch((err) => {
+          console.log(`ошибка: ${err}`);
+        })
+        .finally(() => {});
+    }
+  }
+
   // авторизируем пользователя
   function handleLogin(data) {
     if (data.email && data.password) {
-      console.log("if ok  :  " + data.email);
       mainApi
-        .authorize(data.email, data.password)
+        .authorize(data)
         .then((res) => {
           setCurrentUser(res);
-          console.log(res);
           setLoggedIn(true);
-          history.push("/movies");
-          console.log(loggedIn);
+          history.push('/movies');
         })
         .catch((err) => {
           console.log(`ошибка: ${err}`);
@@ -57,11 +72,37 @@ function App() {
     }
   }
 
+  // обновляем данные пользователя
+  function handleUpdateUser(data) {
+    if (data.name && data.email)
+      mainApi
+        .patchUserInfo(data)
+        .then((res) => {
+          setCurrentUser(res);
+        })
+        .catch((err) => {
+          console.log(`не могу поменять данные пользователя: ${err}.`);
+        });
+  }
+
+  // удаляем токен на выходе
+  function handleSingOut() {
+    mainApi.logOut().then(
+      () => {
+        setLoggedIn(false);
+        history.push('/signin');
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
+
   React.useEffect(() => {
     mainApi.checkToken().then(
       () => {
         setLoggedIn(true);
-        history.push("/movies");
+        history.push('/movies');
       },
       (err) => {
         console.log(err);
@@ -69,10 +110,22 @@ function App() {
     );
   }, [history]);
 
+  // получем данные ]
+  React.useEffect(() => {
+    mainApi
+      .getUserInfo()
+      .then((userData) => {
+        setCurrentUser(userData);
+      })
+      .catch((err) => {
+        console.log(`ошибка: ${err}`);
+      });
+  }, []);
+
   return (
     <div className="App">
       <CurrentUserContext.Provider value={currentUser}>
-        <Route exact path={["/", "/movies", "/saved-movies", "/profile"]}>
+        <Route exact path={['/', '/movies', '/saved-movies', '/profile']}>
           <Header
             currenPath={location.pathname}
             loggedIn={loggedIn}
@@ -93,7 +146,12 @@ function App() {
             <MoviesSaved currenPath={location.pathname} />
           </Route>
           <Route exact path="/profile">
-            <ProfileUpdate validationSchema={validateUserUpdate} />
+            <ProfileUpdate
+              validationSchema={validateUserUpdate}
+              currentUser={currentUser}
+              onSignOut={handleSingOut}
+              onFormSubmit={handleUpdateUser}
+            />
           </Route>
           <Route exact path="/signup">
             <AuthForm
@@ -104,6 +162,7 @@ function App() {
               linkButtonText="Войти"
               linkTo="/signin"
               validationSchema={validateSignUp}
+              onFormSubmit={handleRegister}
             />
           </Route>
           <Route exact path="/signin">
@@ -123,7 +182,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
-        <Route exact path={["/", "/movies", "/saved-movies"]}>
+        <Route exact path={['/', '/movies', '/saved-movies']}>
           <Footer />
         </Route>
       </CurrentUserContext.Provider>
