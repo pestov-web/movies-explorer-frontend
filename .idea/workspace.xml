@@ -2,10 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dc05a32-0a8d-49d4-94c9-ba673e49edc8" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/public/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Logo/Logo.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Logo/Logo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/FilmsCard/FilmsCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilmsCard/FilmsCard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MoviesSaved/MoviesSaved.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesSaved/MoviesSaved.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/MainApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/MoviesApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MoviesApi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/validation-schemas.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/validation-schemas.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +71,7 @@
       <workItem from="1643862247981" duration="58775000" />
       <workItem from="1644126168004" duration="3354000" />
       <workItem from="1644129934844" duration="1027000" />
-      <workItem from="1644131003524" duration="7222000" />
+      <workItem from="1644131003524" duration="13834000" />
     </task>
     <servers />
   </component>

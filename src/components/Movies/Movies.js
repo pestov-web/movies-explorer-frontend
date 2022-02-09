@@ -1,12 +1,12 @@
-import "./Movies.css";
-import Search from "../Search/Search";
+import './Movies.css';
+import Search from '../Search/Search';
 
-import FilmsList from "../FilmsList/FilmsList";
+import FilmsList from '../FilmsList/FilmsList';
 
-function Movies({ currenPath }) {
+function Movies({ currenPath, validationSchema }) {
   return (
     <main>
-      <Search />
+      <Search validationSchema={validationSchema} />
       <FilmsList currenPath={currenPath} />
     </main>
   );

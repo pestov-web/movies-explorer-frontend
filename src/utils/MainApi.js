@@ -1,3 +1,5 @@
+import { HEADERS, MAIN_API_URL } from './constants';
+
 class MainApi {
   constructor({ baseUrl, headers, credentials }) {
     this._baseUrl = baseUrl;
@@ -72,11 +74,8 @@ class MainApi {
 }
 
 const mainApi = new MainApi({
-  baseUrl: 'https://api.pestov-web.ru',
-  headers: {
-    'Content-Type': 'application/json',
-    Accept: 'application/json',
-  },
+  baseUrl: MAIN_API_URL,
+  headers: HEADERS,
   credentials: 'include',
 });
 

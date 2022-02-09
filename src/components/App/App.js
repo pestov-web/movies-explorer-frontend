@@ -4,6 +4,7 @@ import {
   validateSignUp,
   validateSignIn,
   validateUserUpdate,
+  validateFilmSearch,
 } from '../../utils/validation-schemas';
 
 import Footer from '../Footer/Footer';
@@ -20,6 +21,7 @@ import ProfileUpdate from '../ProfileUpdate/ProfileUpdate';
 // подключаем контекст
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import mainApi from '../../utils/MainApi';
+import moviesApi from '../../utils/MoviesApi';
 
 function App() {
   const location = useLocation();
@@ -29,6 +31,7 @@ function App() {
 
   const [currentUser, setCurrentUser] = React.useState({});
   const [loggedIn, setLoggedIn] = React.useState(false);
+  const [loadedMovies, setLoadedMovies] = React.useState([]);
 
   function openModal() {
     setIsOpen(true);
@@ -45,6 +48,7 @@ function App() {
         .register(data)
         .then((res) => {
           if (res) {
+            setCurrentUser(res);
             setLoggedIn(true);
             history.push('/movies');
           }
@@ -120,6 +124,15 @@ function App() {
       .catch((err) => {
         console.log(`ошибка: ${err}`);
       });
+    moviesApi
+      .getMovies()
+      .then((data) => {
+        setLoadedMovies(data);
+        localStorage.setItem('loadedMovies', JSON.stringify(data));
+      })
+      .catch((err) => {
+        console.log(`ошибка: ${err}`);
+      });
   }, []);
 
   return (
@@ -140,10 +153,16 @@ function App() {
             <Main />
           </Route>
           <Route exact path="/movies">
-            <Movies currenPath={location.pathname} />
+            <Movies
+              currenPath={location.pathname}
+              validationSchema={validateFilmSearch}
+            />
           </Route>
           <Route exact path="/saved-movies">
-            <MoviesSaved currenPath={location.pathname} />
+            <MoviesSaved
+              currenPath={location.pathname}
+              validationSchema={validateFilmSearch}
+            />
           </Route>
           <Route exact path="/profile">
             <ProfileUpdate
