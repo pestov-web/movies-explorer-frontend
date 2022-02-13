@@ -29,7 +29,10 @@ export default function FilmsCard({
         <img src={image} alt={nameRU} className="films__image" />
         <h2 className="films__title">{nameRU}</h2>
         {currenPath === '/saved-movies' ? (
-          <button onClick={handleRemove} className="films__add-button button" />
+          <button
+            onClick={handleRemove}
+            className="films__add-button films__add-button_checked button"
+          />
         ) : saved ? (
           <button
             onClick={handleRemove}
