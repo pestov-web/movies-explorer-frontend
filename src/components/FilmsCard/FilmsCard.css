@@ -5,7 +5,8 @@
 }
 .films__image {
   min-height: 151px;
-  min-width: 300;
+  max-height: 168px;
+  min-width: 300px;
   width: 100%;
 }
 .films__title {
@@ -16,7 +17,7 @@
   line-height: 15px;
 }
 .films__title::after {
-  content: "";
+  content: '';
   display: block;
   border-bottom: 1px solid #e8e8e8;
   width: 100%;
@@ -34,17 +35,17 @@
   right: 0px;
   cursor: pointer;
 
-  background: #f9f9f9 url("../../images/films/add-button-white.svg") no-repeat
+  background: #f9f9f9 url('../../images/films/add-button-white.svg') no-repeat
     7px 7px;
   background-size: 15px 15px;
 }
 
 .films__add-button_checked {
-  background: #f9f9f9 url("../../images/films/add-button.svg") no-repeat 7px 8px;
+  background: #f9f9f9 url('../../images/films/add-button.svg') no-repeat 7px 8px;
   background-size: 10px 9px;
 }
 .films__add-button_checked:hover {
-  background: #f9f9f9 url("../../images/films/close-min.svg") no-repeat 7px 7px;
+  background: #f9f9f9 url('../../images/films/close-min.svg') no-repeat 7px 7px;
   background-size: 10px 10px;
 }
 
@@ -65,6 +66,10 @@
   .films__card {
     width: calc(100% / 12 * 6 - 15px);
   }
+  .films__image {
+    max-height: 190px;
+  }
+
   .films__title {
     font-size: 13px;
     line-height: 16px;
@@ -77,6 +82,9 @@
 @media screen and (min-width: 1024px) {
   .films__card {
     width: calc(100% / 12 * 4 - 20px);
+  }
+  .films__image {
+    max-height: 151px;
   }
 }
 @media screen and (min-width: 1280px) {
