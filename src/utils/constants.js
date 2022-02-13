@@ -6,6 +6,8 @@ export const HEADERS = {
   Accept: 'application/json',
 };
 
+export const NO_RESULT_MSG = 'Поиск не дел результатов';
+
 export const userValidationMessage = {
   name: 'Имя не может быть меньше двух символов',
   email: 'Введите правильный email',

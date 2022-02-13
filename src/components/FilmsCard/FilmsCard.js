@@ -28,8 +28,11 @@ export default function FilmsCard({
       ) {
         movie[key] = movie[key].slice(0, 30);
       }
+      if (key === 'country' && movie[key].length >= 20) {
+        movie[key] = movie[key].slice(0, 20);
+      }
     });
-    console.log(movie);
+
     return movie;
   };
 

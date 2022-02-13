@@ -5,6 +5,7 @@ import Search from '../Search/Search';
 import FilmsList from '../FilmsList/FilmsList';
 import Preloader from '../Preloader/Preloader';
 import { filterMovie } from '../../utils/Utils';
+import { NO_RESULT_MSG } from '../../utils/constants';
 
 function Movies({
   currenPath,
@@ -33,7 +34,6 @@ function Movies({
   const handleFormChange = (value) => setValues({ ...values, title: value });
 
   const handleSubmit = () => {
-    console.log(movies);
     setIsLoaded(false);
 
     const foundMovies = movies.filter((movie) =>
@@ -50,7 +50,6 @@ function Movies({
     if (values.title || currenPath === '/saved-movies') {
       handleSubmit();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [values.short]);
 
   React.useEffect(() => {
@@ -80,7 +79,7 @@ function Movies({
             onRemove={onRemove}
           />
         ) : (
-          <span>Ничего не найдено </span>
+          <span className="movies__result-error">{NO_RESULT_MSG}</span>
         )
       ) : (
         <Preloader />

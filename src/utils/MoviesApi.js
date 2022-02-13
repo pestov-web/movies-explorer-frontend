@@ -8,7 +8,6 @@ class MoviesApi {
 
   // возвращаем ошибку в случае ошибки =)
   _handleResponse(res) {
-    console.log(res);
     if (res.ok) {
       return res.json();
     }
