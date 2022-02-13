@@ -23,7 +23,8 @@ export default function FilmsCard({
       }
       if (
         (key === 'nameRU' && movie[key].length >= 30) ||
-        (key === 'nameEN' && movie[key].length >= 30)
+        (key === 'nameEN' && movie[key].length >= 30) ||
+        (key === 'director' && movie[key].length >= 30)
       ) {
         movie[key] = movie[key].slice(0, 30);
       }
