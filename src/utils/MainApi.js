@@ -12,7 +12,6 @@ class MainApi {
     if (res.ok) {
       return res.json();
     }
-
     return Promise.reject(`ошибка ! : ${res.status}`);
   }
 
@@ -80,7 +79,6 @@ class MainApi {
   }
 
   saveMovie(movie) {
-    this._checkMovie(movie);
     return fetch(`${this._baseUrl}/movies`, {
       method: 'POST',
       headers: this._headers,
