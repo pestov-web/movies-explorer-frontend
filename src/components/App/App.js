@@ -127,22 +127,23 @@ function App() {
       .catch((err) => {
         console.log(`ошибка: ${err}`);
       });
-    if (tst) {
-      Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
-        .then(([movies, mainMovies]) => {
-          const getMoviesData = getMovieData(movies);
-
-          setInitialMovies(getMoviesData);
-          setSavedMovies(mainMovies);
-
-          localStorageHandler.save(
-            'savedMovies',
-            mainMovies.map((movie) => movie.movieId)
-          );
-        })
-        .catch((err) => console.error(err));
-    }
   }, []);
+
+  React.useEffect(() => {
+    Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
+      .then(([movies, mainMovies]) => {
+        const getMoviesData = getMovieData(movies);
+
+        setInitialMovies(getMoviesData);
+        setSavedMovies(mainMovies);
+
+        localStorageHandler.save(
+          'savedMovies',
+          mainMovies.map((movie) => movie.movieId)
+        );
+      })
+      .catch((err) => console.error(err));
+  }, [loggedIn]);
 
   const handleRemoveMovie = (movie) => {
     const savedMovie = savedMovies.find(

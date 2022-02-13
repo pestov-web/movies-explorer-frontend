@@ -1,5 +1,4 @@
 export const MAIN_API_URL = 'https://api.pestov-web.ru';
-// export const MAIN_API_URL = 'http://127.0.0.1:3001';
 export const MOVIES_API_URL = 'https://api.nomoreparties.co';
 export const HEADERS = {
   'Content-Type': 'application/json',
