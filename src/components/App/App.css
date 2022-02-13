@@ -1,10 +1,10 @@
-@import url("../../vendor/fonts/Inter/inter.css");
-@import url("../../vendor/normalize.css");
+@import url('../../vendor/fonts/Inter/inter.css');
+@import url('../../vendor/normalize.css');
 
-@import url("../Section/Section.css");
+@import url('../Section/Section.css');
 
 .App {
-  font-family: "Inter", Arial, sans-serif;
+  font-family: 'Inter', Arial, sans-serif;
   font-style: normal;
 }
 
@@ -13,6 +13,11 @@
 }
 .button:hover {
   opacity: 0.8;
+}
+
+button:disabled {
+  background: #f8f8f8;
+  color: #c2c2c2;
 }
 
 .link {
@@ -25,7 +30,7 @@
   position: relative;
 }
 .link_active::after {
-  content: "";
+  content: '';
   position: absolute;
   display: block;
   border-bottom: 2px solid #000000;

@@ -1,50 +1,38 @@
-import { Field, Form, Formik } from 'formik';
 import './Search.css';
 
-function Search(validationSchema) {
+import { REGEXP } from '../../utils/constants';
+
+function Search({ onSubmit, onChange, value }) {
+  const handleChange = (e) => onChange(e.target.value);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    onSubmit();
+  };
+
   return (
     <section className="section search">
       <div className="search__wrapper">
-        <Formik
-          initialValues={{
-            film: '',
-          }}
-          validationSchema={validationSchema}
-          onSubmit={(value) => {
-            console.log(value);
-          }}
+        <form
+          className="search__form"
+          action="#"
+          method="#"
+          onSubmit={handleSubmit}
+          noValidate
         >
-          {({ errors, touched }) => (
-            <Form className="search__form">
-              <Field
-                className="search__form-input"
-                name="film"
-                type="text"
-                placeholder="Фильм"
-              />
-              {errors.film && touched.film ? (
-                <span className="auth-form__error">{errors.film}</span>
-              ) : null}
-
-              <button
-                className="search__form-submit button"
-                type="submit"
-              ></button>
-            </Form>
-          )}
-        </Formik>
-        {/*<form className="search__form" action="#" method="#">*/}
-        {/*  <input*/}
-        {/*    className="search__form-input"*/}
-        {/*    name="film-search"*/}
-        {/*    placeholder="Фильм"*/}
-        {/*    type="search"*/}
-        {/*    required*/}
-        {/*  />*/}
-        {/*  <button className="search__form-submit button" type="submit"></button>*/}
-        {/*</form>*/}
-      </div>
-
+          <input
+            className="search__form-input"
+            name="film-search"
+            placeholder="Фильм"
+            type="search"
+            value={value}
+            onChange={handleChange}
+            pattern={REGEXP.search}
+            required
+          />
+          <button className="search__form-submit button" type="submit"></button>
+        </form>
+      </div>{' '}
       <div className="search__checkbox">
         <label className="search__checkbox-label">
           <input className="search__checkbox-input" type="checkbox" />

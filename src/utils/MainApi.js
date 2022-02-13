@@ -71,6 +71,31 @@ class MainApi {
       credentials: this._credentials,
     }).then(this._handleResponse);
   }
+
+  getMovies() {
+    return fetch(`${this._baseUrl}/movies`, {
+      method: 'GET',
+      headers: this._headers,
+      credentials: this._credentials,
+    }).then(this._handleResponse);
+  }
+
+  saveMovie(movie) {
+    return fetch(`${this._baseUrl}/movies`, {
+      method: 'POST',
+      headers: this._headers,
+      body: JSON.stringify(movie),
+      credentials: this._credentials,
+    }).then(this._handleResponse);
+  }
+
+  removeMovie(id) {
+    return fetch(`${this._baseUrl}/movies/${id}`, {
+      method: 'DELETE',
+      headers: this._headers,
+      credentials: this._credentials,
+    }).then(this._handleResponse);
+  }
 }
 
 const mainApi = new MainApi({

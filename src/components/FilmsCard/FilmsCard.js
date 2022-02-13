@@ -1,21 +1,30 @@
+import React from 'react';
 import './FilmsCard.css';
-import img1 from '../../images/films/1.png';
+import { formatDuration } from '../../utils/Utils';
 
-function FilmsCard() {
+export default function FilmsCard({ movie, onSave, onRemove, isSaved }) {
+  const { image, nameRU, duration, trailer } = movie;
+
+  const [saved, setSaved] = React.useState(isSaved);
+
+  const handleSave = () => {
+    onSave(movie);
+    setSaved(true);
+  };
+
+  const handleRemove = () => {
+    onRemove(movie);
+    setSaved(false);
+  };
+
   return (
     <>
       <li className="films__card">
-        <img
-          src={img1}
-          alt="Баннер 33 слова о дизайне"
-          className="films__image"
-        />
-        <h2 className="films__title">33 слова о дизайне</h2>
+        <img src={image} alt={nameRU} className="films__image" />
+        <h2 className="films__title">{nameRU}</h2>
         <button className="films__add-button films__add-button_checked button"></button>
-        <time className="film__duration">1ч 42м</time>
+        <time className="film__duration">{formatDuration(duration)}</time>
       </li>
     </>
   );
 }
-
-export default FilmsCard;
