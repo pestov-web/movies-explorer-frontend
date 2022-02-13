@@ -15,8 +15,10 @@ export default function FilmsCard({
 
   // проверяем поля фильма
   const checkMovie = (movie) => {
-    movie.forEach((element) => {
-      console.log(element);
+    const keys = Object.keys(movie);
+
+    keys.forEach((key) => {
+      console.log(`${key} : ${movie[key]}`);
     });
   };
 
