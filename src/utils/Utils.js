@@ -1,7 +1,6 @@
 import { MOVIES_API_URL } from './constants';
 
 export const filterMovie = (movie, value, checkbox) => {
-  console.log('dsdsdsd');
   const lowerCaseNameRU = movie.nameRU?.toLowerCase() || '';
   const lowerCaseNameEN = movie.nameEN?.toLowerCase() || '';
   const isShortFilm = movie.duration <= 40;
@@ -25,7 +24,6 @@ export const formatDuration = (duration) => {
 };
 
 export const getMovieData = (movies) => {
-  console.log(movies);
   return movies.map((movie) => ({
     movieId: movie.id,
     year: movie.year,

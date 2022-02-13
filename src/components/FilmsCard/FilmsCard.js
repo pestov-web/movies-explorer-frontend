@@ -22,6 +22,7 @@ export default function FilmsCard({
         movie[key] = '';
       }
     });
+    console.log(movie);
     return movie;
   };
 

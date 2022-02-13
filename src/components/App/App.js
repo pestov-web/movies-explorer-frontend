@@ -128,11 +128,8 @@ function App() {
         console.log(`ошибка: ${err}`);
       });
     if (tst) {
-      console.log(' 123');
       Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
         .then(([movies, mainMovies]) => {
-          console.log(movies);
-          console.log(mainMovies);
           const getMoviesData = getMovieData(movies);
 
           setInitialMovies(getMoviesData);
