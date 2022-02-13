@@ -18,7 +18,10 @@ export default function FilmsCard({
     const keys = Object.keys(movie);
 
     keys.forEach((key) => {
-      console.log(`${key} : ${movie[key]}`);
+      if (!movie[key] || movie[key] === null) {
+        movie[key] = '';
+      }
+      console.log(movie);
     });
   };
 
@@ -36,7 +39,10 @@ export default function FilmsCard({
   return (
     <>
       <li className="films__card">
-        <img src={image} alt={nameRU} className="films__image" />
+        <a href={trailer}>
+          <img src={image} alt={nameRU} className="films__image" />
+        </a>
+
         <h2 className="films__title">{nameRU}</h2>
         {currenPath === '/saved-movies' ? (
           <button
