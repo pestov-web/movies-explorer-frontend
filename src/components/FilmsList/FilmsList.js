@@ -49,6 +49,7 @@ function FilmsList({ currenPath, movies, onSave, onRemove }) {
         {cardsToShow.map((movie) => (
           <FilmsCard
             key={movie.movieId.toString()}
+            currenPath={currenPath}
             movie={movie}
             onSave={onSave}
             onRemove={onRemove}
