@@ -19,7 +19,7 @@ export default function FilmsCard({
 
     keys.forEach((key) => {
       if (!movie[key] || movie[key] === null) {
-        movie[key] = '';
+        movie[key] = 'Неизвестно';
       }
     });
     console.log(movie);
