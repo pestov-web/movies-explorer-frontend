@@ -80,10 +80,11 @@ class MainApi {
   }
 
   saveMovie(movie) {
+    console.log(movie);
     return fetch(`${this._baseUrl}/movies`, {
       method: 'POST',
       headers: this._headers,
-      body: movie,
+      body: JSON.stringify(movie),
       credentials: this._credentials,
     }).then(this._handleResponse);
   }
