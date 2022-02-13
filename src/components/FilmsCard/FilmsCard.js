@@ -13,7 +13,15 @@ export default function FilmsCard({
 
   const [saved, setSaved] = React.useState(isSaved);
 
+  // проверяем поля фильма
+  const checkMovie = (movie) => {
+    movie.forEach((element) => {
+      console.log(element);
+    });
+  };
+
   const handleSave = () => {
+    checkMovie(movie);
     onSave(movie);
     setSaved(true);
   };
