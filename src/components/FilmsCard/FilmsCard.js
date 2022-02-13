@@ -21,13 +21,12 @@ export default function FilmsCard({
       if (!movie[key] || movie[key] === null) {
         movie[key] = '';
       }
-      console.log(movie);
     });
+    return movie;
   };
 
   const handleSave = () => {
-    checkMovie(movie);
-    onSave(movie);
+    onSave(checkMovie(movie));
     setSaved(true);
   };
 
