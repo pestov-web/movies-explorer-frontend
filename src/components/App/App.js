@@ -30,6 +30,7 @@ function App() {
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [initialMovies, setInitialMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
+  const [error, setError] = React.useState({});
 
   function openModal() {
     setIsOpen(true);
@@ -54,6 +55,10 @@ function App() {
         })
         .catch((err) => {
           console.log(`ошибка: ${err}`);
+          setError({
+            name: 'registerError',
+            message: 'Ошибка сервера, попробуйте позже',
+          });
         })
         .finally(() => {});
     }
@@ -71,6 +76,10 @@ function App() {
         })
         .catch((err) => {
           console.log(`ошибка: ${err}`);
+          setError({
+            name: 'loginError',
+            message: 'Не верно введен логин или пароль',
+          });
         });
     }
   }
@@ -84,7 +93,11 @@ function App() {
           setCurrentUser(res);
         })
         .catch((err) => {
-          console.log(`не могу поменять данные пользователя: ${err}.`);
+          console.log(`ошибка: ${err}.`);
+          setError({
+            name: 'updateError',
+            message: 'Не могу поменять данные пользователя',
+          });
         });
   }
 
@@ -101,6 +114,10 @@ function App() {
       },
       (err) => {
         console.log(err);
+        setError({
+          name: 'logoutError',
+          message: 'Ошибка сервера',
+        });
       }
     );
   }
@@ -117,7 +134,7 @@ function App() {
     );
   }, [history]);
 
-  // получем данные ]
+  // получем данные
   React.useEffect(() => {
     mainApi
       .getUserInfo()
@@ -182,8 +199,6 @@ function App() {
       .catch((err) => console.error(err));
   };
 
-  const handleEmptySearch = () => {};
-
   return (
     <div className="App">
       <CurrentUserContext.Provider value={currentUser}>
@@ -207,7 +222,6 @@ function App() {
               movies={initialMovies}
               onSave={handleSaveMovie}
               onRemove={handleRemoveMovie}
-              onEmptySearch={handleEmptySearch}
             />
           </Route>
           <Route exact path="/saved-movies">
@@ -216,7 +230,6 @@ function App() {
               savedMovies={savedMovies}
               movies={savedMovies}
               onRemove={handleRemoveMovie}
-              onEmptySearch={handleEmptySearch}
             />
           </Route>
           <Route exact path="/profile">

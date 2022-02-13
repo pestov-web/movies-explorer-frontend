@@ -7,14 +7,7 @@ import Preloader from '../Preloader/Preloader';
 import { filterMovie } from '../../utils/Utils';
 import { NO_RESULT_MSG } from '../../utils/constants';
 
-function Movies({
-  currenPath,
-  onSave,
-  onRemove,
-  movies,
-  savedMovies,
-  onEmptySearch,
-}) {
+function Movies({ currenPath, onSave, onRemove, movies, savedMovies }) {
   const [values, setValues] = React.useState({ title: '', short: false });
   const [isLoaded, setIsLoaded] = React.useState(true);
   const [isFound, setIsFound] = React.useState(true);
@@ -23,8 +16,6 @@ function Movies({
   const handleButtonClick = () => {
     if (values.title) {
       handleSubmit();
-    } else {
-      onEmptySearch();
     }
   };
 
