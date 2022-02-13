@@ -21,7 +21,10 @@ export default function FilmsCard({
       if (!movie[key] || movie[key] === null) {
         movie[key] = 'Неизвестно';
       }
-      if (key === 'nameRU' || ('nameEN' && movie[key].length >= 30)) {
+      if (
+        (key === 'nameRU' && movie[key].length >= 30) ||
+        (key === 'nameEN' && movie[key].length >= 30)
+      ) {
         movie[key] = movie[key].slice(0, 30);
       }
     });
