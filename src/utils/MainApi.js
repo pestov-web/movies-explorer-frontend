@@ -16,6 +16,13 @@ class MainApi {
     return Promise.reject(`ошибка ! : ${res.status}`);
   }
 
+  // проверяем поля фильма
+  _checkMovie(movie) {
+    movie.forEach((element) => {
+      console.log(element);
+    });
+  }
+
   // регистрируем пользователя
   register({ name, email, password }) {
     return fetch(`${this._baseUrl}/signup`, {
@@ -80,7 +87,7 @@ class MainApi {
   }
 
   saveMovie(movie) {
-    console.log(movie);
+    this._checkMovie(movie);
     return fetch(`${this._baseUrl}/movies`, {
       method: 'POST',
       headers: this._headers,
