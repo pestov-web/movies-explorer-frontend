@@ -22,6 +22,8 @@ function App() {
   const location = useLocation();
   const history = useHistory();
 
+  const tst = true;
+
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const [currentUser, setCurrentUser] = React.useState({});
@@ -125,9 +127,12 @@ function App() {
       .catch((err) => {
         console.log(`ошибка: ${err}`);
       });
-    if (loggedIn) {
+    if (tst) {
+      console.log(' 123');
       Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
         .then(([movies, mainMovies]) => {
+          console.log(movies);
+          console.log(mainMovies);
           const getMoviesData = getMovieData(movies);
 
           setInitialMovies(getMoviesData);

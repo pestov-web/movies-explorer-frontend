@@ -19,8 +19,13 @@ function Movies({
   const [isFound, setIsFound] = React.useState(true);
   const [result, setResult] = React.useState(savedMovies || []);
 
-  const handleButtonClick = () =>
-    values.title ? handleSubmit() : onEmptySearch();
+  const handleButtonClick = () => {
+    if (values.title) {
+      handleSubmit();
+    } else {
+      onEmptySearch();
+    }
+  };
 
   const handleCheckboxClick = (e) =>
     setValues({ ...values, short: e.target.checked });
@@ -28,6 +33,7 @@ function Movies({
   const handleFormChange = (value) => setValues({ ...values, title: value });
 
   const handleSubmit = () => {
+    console.log(movies);
     setIsLoaded(false);
 
     const foundMovies = movies.filter((movie) =>
@@ -72,7 +78,7 @@ function Movies({
             onRemove={onRemove}
           />
         ) : (
-          <span>Ничего не найдено</span>
+          <span>Ничего не найдено </span>
         )
       ) : (
         <Preloader />

@@ -13,13 +13,7 @@ function Search({ onSubmit, onChange, value }) {
   return (
     <section className="section search">
       <div className="search__wrapper">
-        <form
-          className="search__form"
-          action="#"
-          method="#"
-          onSubmit={handleSubmit}
-          noValidate
-        >
+        <form className="search__form" action="#" method="#" noValidate>
           <input
             className="search__form-input"
             name="film-search"
@@ -30,7 +24,11 @@ function Search({ onSubmit, onChange, value }) {
             pattern={REGEXP.search}
             required
           />
-          <button className="search__form-submit button" type="submit"></button>
+          <button
+            className="search__form-submit button"
+            type="submit"
+            onClick={handleSubmit}
+          ></button>
         </form>
       </div>{' '}
       <div className="search__checkbox">

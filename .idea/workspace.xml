@@ -2,27 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8dc05a32-0a8d-49d4-94c9-ba673e49edc8" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/public/BeatFilm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BeatFilm_files/1.a4cdd11e348f8725d604.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/BeatFilm_files/bundle.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/hooks/useFormValidation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/LocalStorageHandler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/utils/Utils.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/App/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/App/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/App/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AuthForm/AuthForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AuthForm/AuthForm.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FilmsCard/FilmsCard.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilmsCard/FilmsCard.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/FilmsList/FilmsList.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/FilmsList/FilmsList.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoreButton/MoreButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoreButton/MoreButton.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Movies/Movies.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Movies/Movies.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MoviesSaved/MoviesSaved.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MoviesSaved/MoviesSaved.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Preloader/Preloader.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Preloader/Preloader.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Search/Search.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/Search.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Search/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Search/Search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/utils/MainApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/MainApi.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/constants.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils/validation-schemas.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/utils/Utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils/Utils.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,7 +72,7 @@
       <workItem from="1644376004966" duration="11411000" />
       <workItem from="1644499198265" duration="601000" />
       <workItem from="1644651755465" duration="6069000" />
-      <workItem from="1644717696199" duration="12890000" />
+      <workItem from="1644717696199" duration="14394000" />
     </task>
     <servers />
   </component>
