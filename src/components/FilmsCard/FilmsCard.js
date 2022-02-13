@@ -21,6 +21,9 @@ export default function FilmsCard({
       if (!movie[key] || movie[key] === null) {
         movie[key] = 'Неизвестно';
       }
+      if (key === 'nameRU' || ('nameEN' && movie[key].length >= 30)) {
+        movie[key] = movie[key].slice(0, 30);
+      }
     });
     console.log(movie);
     return movie;
