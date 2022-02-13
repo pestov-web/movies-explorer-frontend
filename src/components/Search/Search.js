@@ -2,7 +2,7 @@ import './Search.css';
 
 import { REGEXP } from '../../utils/constants';
 
-function Search({ onSubmit, onChange, value }) {
+function Search({ onSubmit, onChange, value, checkboxClick, checkboxValue }) {
   const handleChange = (e) => onChange(e.target.value);
 
   const handleSubmit = (e) => {
@@ -33,7 +33,12 @@ function Search({ onSubmit, onChange, value }) {
       </div>{' '}
       <div className="search__checkbox">
         <label className="search__checkbox-label">
-          <input className="search__checkbox-input" type="checkbox" />
+          <input
+            className="search__checkbox-input"
+            type="checkbox"
+            value={checkboxValue}
+            onClick={checkboxClick}
+          />
           <span className="search__checkbox-text">Короткометражки</span>
         </label>
       </div>

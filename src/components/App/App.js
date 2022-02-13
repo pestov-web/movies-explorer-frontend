@@ -213,7 +213,7 @@ function App() {
             />
           </Route>
           <Route exact path="/saved-movies">
-            <MoviesSaved
+            <Movies
               currenPath={location.pathname}
               savedMovies={savedMovies}
               movies={savedMovies}

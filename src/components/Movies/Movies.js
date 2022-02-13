@@ -68,6 +68,8 @@ function Movies({
         onSubmit={handleButtonClick}
         onChange={handleFormChange}
         value={values.title}
+        checkboxClick={handleCheckboxClick}
+        checkboxValue={values.short}
       />
       {isLoaded ? (
         isFound ? (
