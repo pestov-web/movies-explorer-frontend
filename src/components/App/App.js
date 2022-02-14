@@ -17,6 +17,7 @@ import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
 import { ErrorHandler } from '../../utils/ErrorHandler';
+import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
 function App() {
   const location = useLocation();
@@ -195,29 +196,36 @@ function App() {
           <Route exact path="/">
             <Main />
           </Route>
-          <Route exact path="/movies">
-            <Movies
-              currenPath={location.pathname}
-              movies={initialMovies}
-              onSave={handleSaveMovie}
-              onRemove={handleRemoveMovie}
-            />
-          </Route>
-          <Route exact path="/saved-movies">
-            <Movies
-              currenPath={location.pathname}
-              savedMovies={savedMovies}
-              movies={savedMovies}
-              onRemove={handleRemoveMovie}
-            />
-          </Route>
-          <Route exact path="/profile">
-            <ProfileUpdate
-              currentUser={currentUser}
-              onSignOut={handleSingOut}
-              onFormSubmit={handleUpdateUser}
-            />
-          </Route>
+          <ProtectedRoute
+            exact
+            path="/movies"
+            component={Movies}
+            loggedIn={loggedIn}
+            currenPath={location.pathname}
+            movies={initialMovies}
+            onSave={handleSaveMovie}
+            onRemove={handleRemoveMovie}
+          />
+          <ProtectedRoute
+            exact
+            path="/saved-movies"
+            component={Movies}
+            loggedIn={loggedIn}
+            currenPath={location.pathname}
+            savedMovies={savedMovies}
+            movies={savedMovies}
+            onRemove={handleRemoveMovie}
+          />
+          <ProtectedRoute
+            exact
+            path="/profile"
+            component={ProfileUpdate}
+            loggedIn={loggedIn}
+            currentUser={currentUser}
+            onSignOut={handleSingOut}
+            onFormSubmit={handleUpdateUser}
+          />
+
           <Route exact path="/signup">
             <AuthForm
               currenPath={location.pathname}
