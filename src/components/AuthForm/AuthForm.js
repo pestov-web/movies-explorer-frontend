@@ -14,6 +14,7 @@ function AuthForm({
   linkButtonText,
   linkTo,
   onFormSubmit,
+  errorMessage,
 }) {
   const [isDisabled, setDisabled] = React.useState(true);
   const { values, errors, isValid, handleChange } = useFormValidation({
@@ -99,6 +100,7 @@ function AuthForm({
         </button>
       </form>
       <div className="auth-form__goto">
+        <span className="auth-form__error-text">{errorMessage}</span>
         <span className="auth-form__goto-text">{linkText}</span>
         <Link to={linkTo} className="auth-form__goto-link link">
           {linkButtonText}

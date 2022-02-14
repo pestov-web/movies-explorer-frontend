@@ -8,7 +8,6 @@ import Main from '../Main/Main';
 import './App.css';
 import Movies from '../Movies/Movies';
 import AuthForm from '../AuthForm/AuthForm';
-import MoviesSaved from '../MoviesSaved/MoviesSaved';
 import NotFound from '../NotFound/NotFound';
 import ProfileUpdate from '../ProfileUpdate/ProfileUpdate';
 import localStorageHandler from '../../utils/LocalStorageHandler';
@@ -22,15 +21,13 @@ function App() {
   const location = useLocation();
   const history = useHistory();
 
-  const tst = true;
-
   const [modalIsOpen, setIsOpen] = React.useState(false);
 
   const [currentUser, setCurrentUser] = React.useState({});
   const [loggedIn, setLoggedIn] = React.useState(false);
   const [initialMovies, setInitialMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
-  const [error, setError] = React.useState({});
+  const [errorMessage, setErrorMessage] = React.useState('');
 
   function openModal() {
     setIsOpen(true);
@@ -55,10 +52,7 @@ function App() {
         })
         .catch((err) => {
           console.log(`ошибка: ${err}`);
-          setError({
-            name: 'registerError',
-            message: 'Ошибка сервера, попробуйте позже',
-          });
+          setErrorMessage('Ошибка сервера, попробуйте позже');
         })
         .finally(() => {});
     }
@@ -76,10 +70,7 @@ function App() {
         })
         .catch((err) => {
           console.log(`ошибка: ${err}`);
-          setError({
-            name: 'loginError',
-            message: 'Не верно введен логин или пароль',
-          });
+          setErrorMessage('Не верно введен логин или пароль');
         });
     }
   }
@@ -94,10 +85,7 @@ function App() {
         })
         .catch((err) => {
           console.log(`ошибка: ${err}.`);
-          setError({
-            name: 'updateError',
-            message: 'Не могу поменять данные пользователя',
-          });
+          setErrorMessage('Не могу поменять данные пользователя');
         });
   }
 
@@ -114,10 +102,7 @@ function App() {
       },
       (err) => {
         console.log(err);
-        setError({
-          name: 'logoutError',
-          message: 'Ошибка сервера',
-        });
+        setErrorMessage('Ошибка сервера');
       }
     );
   }
@@ -248,6 +233,7 @@ function App() {
               linkButtonText="Войти"
               linkTo="/signin"
               onFormSubmit={handleRegister}
+              errorMessage={errorMessage}
             />
           </Route>
           <Route exact path="/signin">
@@ -260,6 +246,7 @@ function App() {
               linkTo="/signup"
               isSignIn="true"
               onFormSubmit={handleLogin}
+              errorMessage={errorMessage}
             />
           </Route>
           <Route>
