@@ -16,6 +16,7 @@ import { getMovieData } from '../../utils/Utils.js';
 import { CurrentUserContext } from '../../contexts/CurrentUserContext';
 import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
+import { ErrorHandler } from '../../utils/ErrorHandler';
 
 function App() {
   const location = useLocation();
@@ -39,20 +40,16 @@ function App() {
 
   // регистрируем пользователя
   function handleRegister(data) {
-    console.log(data);
     if (data.name && data.email && data.password) {
       mainApi
         .register(data)
         .then((res) => {
           if (res) {
-            setCurrentUser(res);
-            setLoggedIn(true);
-            history.push('/movies');
+            handleLogin(data);
           }
         })
         .catch((err) => {
-          console.log(`ошибка: ${err}`);
-          setErrorMessage('Ошибка сервера, попробуйте позже');
+          ErrorHandler(err);
         })
         .finally(() => {});
     }
@@ -69,8 +66,7 @@ function App() {
           history.push('/movies');
         })
         .catch((err) => {
-          console.log(`ошибка: ${err}`);
-          setErrorMessage('Не верно введен логин или пароль');
+          ErrorHandler(err);
         });
     }
   }
@@ -84,8 +80,7 @@ function App() {
           setCurrentUser(res);
         })
         .catch((err) => {
-          console.log(`ошибка: ${err}.`);
-          setErrorMessage('Не могу поменять данные пользователя');
+          ErrorHandler(err);
         });
   }
 
@@ -101,8 +96,7 @@ function App() {
         history.push('/');
       },
       (err) => {
-        console.log(err);
-        setErrorMessage('Ошибка сервера');
+        ErrorHandler(err);
       }
     );
   }
@@ -114,7 +108,7 @@ function App() {
         history.push('/movies');
       },
       (err) => {
-        console.log(err);
+        ErrorHandler(err);
       }
     );
   }, [history]);
@@ -127,7 +121,7 @@ function App() {
         setCurrentUser(userData);
       })
       .catch((err) => {
-        console.log(`ошибка: ${err}`);
+        ErrorHandler(err);
       });
   }, []);
 
@@ -144,7 +138,7 @@ function App() {
           mainMovies.map((movie) => movie.movieId)
         );
       })
-      .catch((err) => console.error(err));
+      .catch((err) => ErrorHandler(err));
   }, [loggedIn]);
 
   const handleRemoveMovie = (movie) => {
@@ -165,7 +159,7 @@ function App() {
           savedList.filter((id) => id !== movie.movieId.toString())
         );
       })
-      .catch((err) => console.error(err));
+      .catch((err) => ErrorHandler(err));
   };
 
   const handleSaveMovie = (movie) => {
@@ -181,7 +175,7 @@ function App() {
           ...savedList,
         ]);
       })
-      .catch((err) => console.error(err));
+      .catch((err) => ErrorHandler(err));
   };
 
   return (
