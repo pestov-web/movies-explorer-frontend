@@ -49,7 +49,7 @@ function App() {
           }
         })
         .catch((err) => {
-          ErrorHandler(err);
+          setErrorMessage(ErrorHandler(err));
         })
         .finally(() => {});
     }
@@ -66,7 +66,7 @@ function App() {
           history.push('/movies');
         })
         .catch((err) => {
-          ErrorHandler(err);
+          setErrorMessage(ErrorHandler(err));
         });
     }
   }
