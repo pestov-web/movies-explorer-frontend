@@ -49,7 +49,7 @@ export default function FilmsCard({
   return (
     <>
       <li className="films__card">
-        <a href={trailer}>
+        <a href={trailer} target="_blank" rel="noreferrer">
           <img src={image} alt={nameRU} className="films__image" />
         </a>
 
