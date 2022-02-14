@@ -12,7 +12,7 @@ class MainApi {
     if (res.ok) {
       return res.json();
     }
-    return Promise.reject(`ошибка ! : ${res.status}`);
+    return Promise.reject(res.status);
   }
 
   // регистрируем пользователя

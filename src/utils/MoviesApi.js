@@ -12,7 +12,7 @@ class MoviesApi {
       return res.json();
     }
 
-    return Promise.reject(`ошибка ! : ${res.status}`);
+    return Promise.reject(res.status);
   }
 
   // получаем фильмы с сервера
