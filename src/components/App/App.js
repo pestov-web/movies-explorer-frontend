@@ -123,7 +123,7 @@ function App() {
       .catch((err) => {
         ErrorHandler(err);
       });
-  }, []);
+  }, [loggedIn]);
 
   React.useEffect(() => {
     Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
