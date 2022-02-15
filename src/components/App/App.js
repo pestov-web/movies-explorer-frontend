@@ -224,6 +224,7 @@ function App() {
             onSave={handleSaveMovie}
             onRemove={handleRemoveMovie}
             setLastResult={setLastResult}
+            lastResult={lastResult}
           />
           <ProtectedRoute
             exact

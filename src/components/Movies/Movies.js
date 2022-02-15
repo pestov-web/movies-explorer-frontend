@@ -15,8 +15,14 @@ function Movies({
   movies,
   savedMovies,
   setLastResult,
+  lastResult,
 }) {
-  const [values, setValues] = React.useState({ title: '', short: false });
+  const [values, setValues] = React.useState(
+    { title: lastResult.values.title, short: lastResult.values.short } || {
+      title: '',
+      short: false,
+    }
+  );
   const [isLoaded, setIsLoaded] = React.useState(true);
   const [isFound, setIsFound] = React.useState(true);
   const [result, setResult] = React.useState(savedMovies || []);
@@ -27,10 +33,8 @@ function Movies({
     }
   };
 
-  const handleCheckboxClick = (e) => {
-    console.log(e.target.checked);
+  const handleCheckboxClick = (e) =>
     setValues({ ...values, short: e.target.checked });
-  };
 
   const handleFormChange = (value) => setValues({ ...values, title: value });
 
