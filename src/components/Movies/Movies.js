@@ -49,11 +49,11 @@ function Movies({
     setIsFound(foundMovies.length);
     setResult(foundMovies);
     if (currenPath === '/movies') {
-      localStorageHandler.save('lastResult', {
-        movies: foundMovies,
-        title: values.title,
-        short: values.short,
-      });
+      localStorageHandler.save('lastResult', [
+        foundMovies,
+        values.title,
+        values.short,
+      ]);
       setLastResult({ foundMovies, values });
     }
 

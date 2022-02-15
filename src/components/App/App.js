@@ -30,7 +30,7 @@ function App() {
   const [initialMovies, setInitialMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [errorMessage, setErrorMessage] = React.useState('');
-  const [lastResult, setLastResult] = React.useState({});
+  const [lastResult, setLastResult] = React.useState([]);
 
   function openModal() {
     setIsOpen(true);
