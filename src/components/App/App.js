@@ -104,7 +104,11 @@ function App() {
 
   React.useEffect(() => {
     console.log(location.pathname);
-    if (loggedIn && location.pathname === ('/signin' || '/signup')) {
+    if (
+      (loggedIn && location.pathname === '/signin') ||
+      location.pathname === '/signin'
+    ) {
+      console.log('nenen');
       history.push('/movies');
     }
   }, [history, location.pathname, loggedIn]);
