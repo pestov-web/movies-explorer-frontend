@@ -69,13 +69,10 @@ function Movies({
   }, [values.short]);
 
   React.useEffect(() => {
-    setValues(
-      { title: lastSearchTitle, short: lastCheckboxState } || {
-        title: '',
-        short: false,
-      }
-    );
-    setIsFound(true);
+    if (values.title || currenPath === '/movies') {
+      setValues({ title: '', short: false });
+      setIsFound(true);
+    }
   }, [currenPath]);
 
   React.useEffect(() => {
