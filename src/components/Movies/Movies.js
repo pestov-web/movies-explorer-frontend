@@ -16,17 +16,11 @@ function Movies({
   savedMovies,
   setLastResult,
   lastResult,
-  lastSearchTitle,
-  setLastSearchTitle,
-  lastCheckboxState,
-  setLastCheckboxState,
 }) {
-  const [values, setValues] = React.useState(
-    { title: lastSearchTitle, short: lastCheckboxState } || {
-      title: '',
-      short: false,
-    }
-  );
+  const [values, setValues] = React.useState({
+    title: '',
+    short: false,
+  });
 
   const [isLoaded, setIsLoaded] = React.useState(true);
   const [isFound, setIsFound] = React.useState(true);
@@ -55,8 +49,6 @@ function Movies({
     if (currenPath === '/movies') {
       localStorageHandler.save('lastResult', foundMovies);
       setLastResult(foundMovies);
-      setLastSearchTitle(values.title);
-      setLastCheckboxState(values.short);
     }
 
     setTimeout(() => setIsLoaded(true), 1500);
@@ -72,9 +64,6 @@ function Movies({
     if (currenPath === '/movies') {
       setValues({ title: '', short: false });
       setIsFound(true);
-    }
-    if (currenPath === '/saved-movies') {
-      setValues({ title: lastSearchTitle, short: lastCheckboxState });
     }
   }, [currenPath]);
 
