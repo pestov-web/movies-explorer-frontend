@@ -97,7 +97,7 @@ function App() {
         localStorageHandler.purgeAll();
         setCurrentUser({});
         setSavedMovies([]);
-        setLastResult({});
+        setLastResult([]);
         history.push('/');
       },
       (err) => {
@@ -156,7 +156,7 @@ function App() {
 
           const lastSearch = localStorageHandler.get('lastResult');
           setLastResult(lastSearch);
-          console.log(lastResult);
+          console.log(lastSearch);
         })
         .catch((err) => ErrorHandler(err));
     }
