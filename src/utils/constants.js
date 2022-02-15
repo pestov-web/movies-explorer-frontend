@@ -4,10 +4,12 @@ export const HEADERS = {
   'Content-Type': 'application/json',
   Accept: 'application/json',
 };
+
+// messages
 export const AUTH_ERROR_MSG = 'Ошибка авторизации';
 export const SERVER_ERROR_MSG = 'Сервер недоступен, попробуйте позже';
 export const BAD_REQ_MSG = 'Cервер не смог обработать запрос';
-export const NO_RESULT_MSG = 'Поиск не дел результатов';
+export const NO_RESULT_MSG = 'Поиск не дал результатов';
 export const EXISTS_MSG = 'Такой пользователь существует';
 
 export const userValidationMessage = {
@@ -33,13 +35,13 @@ export const SCREEN_SIZE = {
 };
 
 export const CARDS_NUMBER = {
-  L: 8,
-  M: 6,
-  S: 3,
+  L: 18,
+  M: 8,
+  S: 5,
 };
 
 export const MORE_CARDS = {
   L: 4,
-  M: 3,
+  M: 2,
   S: 1,
 };

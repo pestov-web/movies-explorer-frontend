@@ -116,30 +116,34 @@ function App() {
 
   // получем данные
   React.useEffect(() => {
-    mainApi
-      .getUserInfo()
-      .then((userData) => {
-        setCurrentUser(userData);
-      })
-      .catch((err) => {
-        ErrorHandler(err);
-      });
+    if (loggedIn) {
+      mainApi
+        .getUserInfo()
+        .then((userData) => {
+          setCurrentUser(userData);
+        })
+        .catch((err) => {
+          ErrorHandler(err);
+        });
+    }
   }, [loggedIn]);
 
   React.useEffect(() => {
-    Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
-      .then(([movies, mainMovies]) => {
-        const getMoviesData = getMovieData(movies);
+    if (loggedIn) {
+      Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
+        .then(([movies, mainMovies]) => {
+          const getMoviesData = getMovieData(movies);
 
-        setInitialMovies(getMoviesData);
-        setSavedMovies(mainMovies);
+          setInitialMovies(getMoviesData);
+          setSavedMovies(mainMovies);
 
-        localStorageHandler.save(
-          'savedMovies',
-          mainMovies.map((movie) => movie.movieId)
-        );
-      })
-      .catch((err) => ErrorHandler(err));
+          localStorageHandler.save(
+            'savedMovies',
+            mainMovies.map((movie) => movie.movieId)
+          );
+        })
+        .catch((err) => ErrorHandler(err));
+    }
   }, [loggedIn]);
 
   const handleRemoveMovie = (movie) => {
