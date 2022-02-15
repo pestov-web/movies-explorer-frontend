@@ -24,9 +24,9 @@ function AuthForm({
     password: '',
   });
 
-  function handleOnChange() {
+  function handleOnChange(e) {
     setErrorMessage('');
-    handleChange();
+    handleChange(e);
   }
 
   function handleSubmit(e) {
