@@ -27,8 +27,10 @@ function Movies({
     }
   };
 
-  const handleCheckboxClick = (e) =>
+  const handleCheckboxClick = (e) => {
+    console.log(e.target.checked);
     setValues({ ...values, short: e.target.checked });
+  };
 
   const handleFormChange = (value) => setValues({ ...values, title: value });
 
@@ -42,8 +44,8 @@ function Movies({
     setIsFound(foundMovies.length);
     setResult(foundMovies);
     if (currenPath === '/movies') {
-      localStorageHandler.save('lastResult', foundMovies);
-      setLastResult(foundMovies);
+      localStorageHandler.save('lastResult', { foundMovies, values });
+      setLastResult({ foundMovies, values });
     }
 
     setTimeout(() => setIsLoaded(true), 1500);
