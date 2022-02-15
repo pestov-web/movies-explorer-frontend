@@ -18,11 +18,12 @@ function Movies({
   lastResult,
 }) {
   const [values, setValues] = React.useState(
-    { title: lastResult.values.title, short: lastResult.values.short } || {
+    { title: lastResult.title, short: lastResult.short } || {
       title: '',
       short: false,
     }
   );
+
   const [isLoaded, setIsLoaded] = React.useState(true);
   const [isFound, setIsFound] = React.useState(true);
   const [result, setResult] = React.useState(savedMovies || []);
@@ -48,7 +49,11 @@ function Movies({
     setIsFound(foundMovies.length);
     setResult(foundMovies);
     if (currenPath === '/movies') {
-      localStorageHandler.save('lastResult', { foundMovies, values });
+      localStorageHandler.save('lastResult', {
+        movies: foundMovies,
+        title: values.title,
+        short: values.short,
+      });
       setLastResult({ foundMovies, values });
     }
 
