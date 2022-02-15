@@ -31,6 +31,8 @@ function App() {
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [errorMessage, setErrorMessage] = React.useState('');
   const [lastResult, setLastResult] = React.useState([]);
+  const [lastSearchTitle, setLastSearchTitle] = React.useState('');
+  const [lastCheckboxState, setLastCheckboxState] = React.useState(false);
 
   function openModal() {
     setIsOpen(true);
@@ -226,6 +228,10 @@ function App() {
             onRemove={handleRemoveMovie}
             setLastResult={setLastResult}
             lastResult={lastResult}
+            lastSearchTitle={lastSearchTitle}
+            setLastSearchTitle={setLastSearchTitle}
+            lastCheckboxState={lastCheckboxState}
+            setLastCheckboxState={setLastCheckboxState}
           />
           <ProtectedRoute
             exact
