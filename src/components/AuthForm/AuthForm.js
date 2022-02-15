@@ -75,6 +75,7 @@ function AuthForm({
             placeholder="E-mail"
             value={values.email || ''}
             onChange={handleChange}
+            pattern={REGEXP.email}
           />
           <span className="auth-form__error">{errors.email}</span>
         </div>
