@@ -222,6 +222,7 @@ function App() {
             movies={initialMovies}
             onSave={handleSaveMovie}
             onRemove={handleRemoveMovie}
+            setLastResult={setLastResult}
           />
           <ProtectedRoute
             exact

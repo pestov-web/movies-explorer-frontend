@@ -35,7 +35,7 @@ export const SCREEN_SIZE = {
 };
 
 export const CARDS_NUMBER = {
-  L: 18,
+  L: 16,
   M: 8,
   S: 5,
 };

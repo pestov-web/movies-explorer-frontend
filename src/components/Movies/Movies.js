@@ -8,7 +8,14 @@ import { filterMovie } from '../../utils/Utils';
 import { NO_RESULT_MSG } from '../../utils/constants';
 import localStorageHandler from '../../utils/LocalStorageHandler';
 
-function Movies({ currenPath, onSave, onRemove, movies, savedMovies }) {
+function Movies({
+  currenPath,
+  onSave,
+  onRemove,
+  movies,
+  savedMovies,
+  setLastResult,
+}) {
   const [values, setValues] = React.useState({ title: '', short: false });
   const [isLoaded, setIsLoaded] = React.useState(true);
   const [isFound, setIsFound] = React.useState(true);
@@ -34,8 +41,10 @@ function Movies({ currenPath, onSave, onRemove, movies, savedMovies }) {
 
     setIsFound(foundMovies.length);
     setResult(foundMovies);
-
-    localStorageHandler.save('lastResult', foundMovies);
+    if (currenPath === '/movies') {
+      localStorageHandler.save('lastResult', foundMovies);
+      setLastResult(foundMovies);
+    }
 
     setTimeout(() => setIsLoaded(true), 1500);
   };
