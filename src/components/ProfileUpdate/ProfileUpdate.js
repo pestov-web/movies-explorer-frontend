@@ -59,7 +59,6 @@ function ProfileUpdate({ currentUser, onSignOut, onFormSubmit }) {
               name="email"
               value={email || ''}
               onChange={handleChange}
-              pattern={REGEXP.email}
               required
             />
           </label>
