@@ -24,6 +24,7 @@ export const formatDuration = (duration) => {
 };
 
 export const getMovieData = (movies) => {
+  console.log(movies);
   return movies.map((movie) => ({
     movieId: movie.id,
     year: movie.year,

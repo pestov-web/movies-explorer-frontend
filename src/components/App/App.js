@@ -30,6 +30,7 @@ function App() {
   const [initialMovies, setInitialMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [errorMessage, setErrorMessage] = React.useState('');
+  const [lastResult, setLastResult] = React.useState([]);
 
   function openModal() {
     setIsOpen(true);
@@ -149,6 +150,9 @@ function App() {
             'savedMovies',
             mainMovies.map((movie) => movie.movieId)
           );
+
+          const lastSearch = localStorageHandler.get('lastResult');
+          setLastResult(lastSearch);
         })
         .catch((err) => ErrorHandler(err));
     }
@@ -214,6 +218,7 @@ function App() {
             component={Movies}
             loggedIn={loggedIn}
             currenPath={location.pathname}
+            savedMovies={lastResult}
             movies={initialMovies}
             onSave={handleSaveMovie}
             onRemove={handleRemoveMovie}

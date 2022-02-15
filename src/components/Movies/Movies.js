@@ -6,6 +6,7 @@ import FilmsList from '../FilmsList/FilmsList';
 import Preloader from '../Preloader/Preloader';
 import { filterMovie } from '../../utils/Utils';
 import { NO_RESULT_MSG } from '../../utils/constants';
+import localStorageHandler from '../../utils/LocalStorageHandler';
 
 function Movies({ currenPath, onSave, onRemove, movies, savedMovies }) {
   const [values, setValues] = React.useState({ title: '', short: false });
@@ -33,6 +34,8 @@ function Movies({ currenPath, onSave, onRemove, movies, savedMovies }) {
 
     setIsFound(foundMovies.length);
     setResult(foundMovies);
+
+    localStorageHandler.save('lastResult', foundMovies);
 
     setTimeout(() => setIsLoaded(true), 1500);
   };
