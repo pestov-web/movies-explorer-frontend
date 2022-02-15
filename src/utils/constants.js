@@ -8,6 +8,7 @@ export const AUTH_ERROR_MSG = 'Ошибка авторизации';
 export const SERVER_ERROR_MSG = 'Сервер недоступен, попробуйте позже';
 export const BAD_REQ_MSG = 'Cервер не смог обработать запрос';
 export const NO_RESULT_MSG = 'Поиск не дел результатов';
+export const EXISTS_MSG = 'Такой пользователь существует';
 
 export const userValidationMessage = {
   name: 'Имя не может быть меньше двух символов',
@@ -19,7 +20,7 @@ export const userValidationMessage = {
 
 export const REGEXP = {
   name: '^[A-Za-zА-Яа-я0-9]{2,}$',
-  email: '^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$',
+  email: '^([A-Za-z0-9_-.])+@([A-Za-z0-9_-.])+.([A-Za-z]{2,4})$',
   password: '^[A-Za-z0-9]{8,}$',
   search: '/^[A-Za-zА-Яа-я0-9s]+$/',
 };

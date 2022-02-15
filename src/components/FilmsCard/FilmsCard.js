@@ -62,7 +62,7 @@ export default function FilmsCard({
         ) : saved ? (
           <button
             onClick={handleRemove}
-            className="films__add-button films__add-button_checked button"
+            className="films__add-button films__add-button_delete button"
           />
         ) : (
           <button onClick={handleSave} className="films__add-button button" />

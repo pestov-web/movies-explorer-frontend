@@ -48,7 +48,10 @@
   background: #f9f9f9 url('../../images/films/close-min.svg') no-repeat 7px 7px;
   background-size: 10px 10px;
 }
-
+.films__add-button_delete {
+  background: #f9f9f9 url('../../images/films/close-min.svg') no-repeat 7px 7px;
+  background-size: 10px 10px;
+}
 .films__button-image {
   fill: #ffffff;
   width: 10px;
