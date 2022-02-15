@@ -236,6 +236,7 @@ function App() {
               linkTo="/signin"
               onFormSubmit={handleRegister}
               errorMessage={errorMessage}
+              setErrorMessage={setErrorMessage}
             />
           </Route>
           <Route exact path="/signin">
@@ -249,6 +250,7 @@ function App() {
               isSignIn="true"
               onFormSubmit={handleLogin}
               errorMessage={errorMessage}
+              setErrorMessage={setErrorMessage}
             />
           </Route>
           <Route>

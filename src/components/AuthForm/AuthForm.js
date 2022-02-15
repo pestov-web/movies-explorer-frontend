@@ -15,13 +15,17 @@ function AuthForm({
   linkTo,
   onFormSubmit,
   errorMessage,
+  setErrorMessage,
 }) {
   const [isDisabled, setDisabled] = React.useState(true);
-  const { values, errors, isValid, handleChange } = useFormValidation({
-    name: '',
-    email: '',
-    password: '',
-  });
+  const { values, errors, isValid, handleChange } = useFormValidation(
+    {
+      name: '',
+      email: '',
+      password: '',
+    },
+    setErrorMessage
+  );
 
   function handleSubmit(e) {
     e.preventDefault();
