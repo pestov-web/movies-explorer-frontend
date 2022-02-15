@@ -57,12 +57,12 @@ export default function FilmsCard({
         {currenPath === '/saved-movies' ? (
           <button
             onClick={handleRemove}
-            className="films__add-button films__add-button_checked button"
+            className="films__add-button films__add-button_delete button"
           />
         ) : saved ? (
           <button
             onClick={handleRemove}
-            className="films__add-button films__add-button_delete button"
+            className="films__add-button films__add-button_checked  button"
           />
         ) : (
           <button onClick={handleSave} className="films__add-button button" />
