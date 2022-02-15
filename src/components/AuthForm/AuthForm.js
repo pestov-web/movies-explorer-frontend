@@ -18,14 +18,16 @@ function AuthForm({
   setErrorMessage,
 }) {
   const [isDisabled, setDisabled] = React.useState(true);
-  const { values, errors, isValid, handleChange } = useFormValidation(
-    {
-      name: '',
-      email: '',
-      password: '',
-    },
-    setErrorMessage
-  );
+  const { values, errors, isValid, handleChange } = useFormValidation({
+    name: '',
+    email: '',
+    password: '',
+  });
+
+  function handleOnChange() {
+    setErrorMessage('');
+    handleChange();
+  }
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -57,7 +59,7 @@ function AuthForm({
               name="name"
               placeholder="Имя"
               value={values.name || ''}
-              onChange={handleChange}
+              onChange={handleOnChange}
               pattern={REGEXP.name}
             />
             <span className="auth-form__error">{errors.name}</span>
@@ -74,7 +76,7 @@ function AuthForm({
             type="email"
             placeholder="E-mail"
             value={values.email || ''}
-            onChange={handleChange}
+            onChange={handleOnChange}
             pattern={REGEXP.email}
           />
           <span className="auth-form__error">{errors.email}</span>
@@ -88,7 +90,7 @@ function AuthForm({
             name="password"
             type="password"
             placeholder="Пароль"
-            onChange={handleChange}
+            onChange={handleOnChange}
             pattern={REGEXP.password}
           />
           <span className="auth-form__error">{errors.password}</span>

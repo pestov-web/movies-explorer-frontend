@@ -1,7 +1,7 @@
 import { useState, useCallback } from 'react';
 import { userValidationMessage } from '../utils/constants';
 
-export const useFormValidation = (inputValues, setErrorMessage) => {
+export const useFormValidation = (inputValues) => {
   const [values, setValues] = useState(inputValues);
   const [errors, setErrors] = useState({});
   const [isValid, setIsValid] = useState(true);
@@ -10,8 +10,6 @@ export const useFormValidation = (inputValues, setErrorMessage) => {
     const input = e.target;
     const { name, value } = input;
     const form = input.closest('form');
-
-    setErrorMessage('');
 
     setValues({
       ...values,
