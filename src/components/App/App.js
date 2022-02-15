@@ -103,10 +103,11 @@ function App() {
   }
 
   React.useEffect(() => {
-    if (loggedIn && (location.pathname === '/signin' || '/signup')) {
+    console.log(location.pathname);
+    if (loggedIn && location.pathname === ('/signin' || '/signup')) {
       history.push('/movies');
     }
-  }, [history]);
+  }, [history, location.pathname, loggedIn]);
 
   React.useEffect(() => {
     mainApi.checkToken().then(
