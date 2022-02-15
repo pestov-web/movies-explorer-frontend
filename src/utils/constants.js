@@ -28,6 +28,8 @@ export const REGEXP = {
   search: '/^[A-Za-zА-Яа-я0-9s]+$/',
 };
 
+export const SHORT_FILM_DURATION = 40;
+
 export const SCREEN_SIZE = {
   L: 1024,
   M: 640,

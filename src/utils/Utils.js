@@ -1,9 +1,9 @@
-import { MOVIES_API_URL } from './constants';
+import { MOVIES_API_URL, SHORT_FILM_DURATION } from './constants';
 
 export const filterMovie = (movie, value, checkbox) => {
   const lowerCaseNameRU = movie.nameRU?.toLowerCase() || '';
   const lowerCaseNameEN = movie.nameEN?.toLowerCase() || '';
-  const isShortFilm = movie.duration <= 40;
+  const isShortFilm = movie.duration <= SHORT_FILM_DURATION;
 
   const isNameMatched =
     lowerCaseNameRU.includes(value.toLowerCase()) ||
