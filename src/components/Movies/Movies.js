@@ -73,7 +73,7 @@ function Movies({
       setValues({ title: '', short: false });
       setIsFound(true);
     }
-    if (values.title || currenPath === '/saved-movies') {
+    if (currenPath === '/saved-movies') {
       setValues({ title: lastSearchTitle, short: lastCheckboxState });
     }
   }, [currenPath]);
