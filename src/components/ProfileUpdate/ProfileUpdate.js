@@ -7,8 +7,8 @@ import { useFormValidation } from '../../hooks/useFormValidation';
 function ProfileUpdate({ currentUser, onSignOut, onFormSubmit }) {
   const [isDisabled, setDisabled] = React.useState(true);
   const { values, errors, isValid, handleChange } = useFormValidation({
-    name: '',
-    email: '',
+    name: currentUser.name,
+    email: currentUser.email,
   });
   const { name, email } = values;
 
