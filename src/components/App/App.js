@@ -154,7 +154,6 @@ function App() {
 
           const lastSearch = localStorageHandler.get('lastResult');
           setLastResult(lastSearch);
-          console.log(lastSearch);
         })
         .catch((err) => ErrorHandler(err));
     }
