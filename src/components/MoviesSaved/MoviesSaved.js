@@ -53,7 +53,7 @@ function MoviesSaved({
   React.useEffect(() => {
     if (loggedIn) {
       console.log(result);
-      const savedList = localStorageHandler.get('savedMoviesList');
+      const savedList = localStorageHandler.get('savedMovies');
       console.log(savedList);
       if (savedList) setSavedMovies(savedList);
     }
