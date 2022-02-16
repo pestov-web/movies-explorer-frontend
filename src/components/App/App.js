@@ -158,10 +158,10 @@ function App() {
       (item) => item.movieId === movie.movieId
     );
     mainApi
-      .removeMovie(savedMovie.movieId)
+      .removeMovie(savedMovie._id)
       .then(() => {
         setSavedMovies(
-          savedMovies.filter((item) => item.movieId !== savedMovie.movieId)
+          savedMovies.filter((item) => item._id !== savedMovie._id)
         );
 
         const savedList = localStorageHandler.get('savedMovies');
