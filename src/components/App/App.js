@@ -111,7 +111,7 @@ function App() {
     }
   }, [history, location.pathname, loggedIn]);
 
-  React.useEffect(() => {
+  React.useLayoutEffect(() => {
     mainApi.checkToken().then(
       () => {
         setLoggedIn(true);
