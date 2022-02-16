@@ -54,6 +54,12 @@ function Movies({ loggedIn, currenPath, onSave, onRemove }) {
   }, [lastResult]);
 
   React.useEffect(() => {
+    if (values.title) {
+      handleSubmit();
+    }
+  }, [values.short]);
+
+  React.useEffect(() => {
     if (loggedIn) {
       const movies = localStorageHandler.get('initialMovies');
       setInitialMovies(movies);

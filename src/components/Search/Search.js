@@ -14,8 +14,6 @@ function Search({ onSubmit, onChange, value, checkboxClick, checkboxValue }) {
     <section className="section search">
       <div className="search__wrapper">
         <form className="search__form" action="#" method="#" noValidate>
-          {value}
-          {checkboxValue}
           <input
             className="search__form-input"
             name="film-search"
