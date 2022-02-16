@@ -61,10 +61,11 @@ function App() {
     if (data.email && data.password) {
       mainApi
         .authorize(data)
-        .then((res) => {
+        .then(async (res) => {
           setCurrentUser(res);
           setLoggedIn(true);
           history.push('/movies');
+          await getMoviesList();
         })
         .catch((err) => {
           setErrorMessage(ErrorHandler(err));
@@ -137,6 +138,19 @@ function App() {
   }, [loggedIn]);
 
   React.useEffect(() => {
+    if (loggedIn) {
+      mainApi
+        .getUserInfo()
+        .then((userData) => {
+          setCurrentUser(userData);
+        })
+        .catch((err) => {
+          ErrorHandler(err);
+        });
+    }
+  }, [loggedIn]);
+
+  const getMoviesList = () => {
     Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
       .then(([movies, mainMovies]) => {
         const getMoviesData = getMovieData(movies);
@@ -145,7 +159,7 @@ function App() {
         localStorageHandler.save('initialMovies', getMoviesData);
       })
       .catch((err) => ErrorHandler(err));
-  }, []);
+  };
 
   const handleRemoveMovie = (movie) => {
     const savedMovie = savedMovies.find(
