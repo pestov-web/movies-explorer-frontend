@@ -57,6 +57,7 @@ function Movies({ loggedIn, currenPath, onSave, onRemove, movies }) {
       const lastSearch = localStorageHandler.get('lastResult');
       setLastResult(lastSearch);
       const prevValues = localStorageHandler.get('values');
+      console.log(prevValues);
       setValues(prevValues);
     }
   }, [loggedIn]);
