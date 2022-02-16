@@ -162,7 +162,7 @@ function App() {
         const savedList = localStorageHandler.get('savedMovies');
         console.log(savedList);
         localStorageHandler.save(
-          'savedMoviesList',
+          'savedMovies',
           savedList.filter((movieId) => movieId !== movie.movieId.toString())
         );
       })
