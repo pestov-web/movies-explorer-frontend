@@ -195,8 +195,8 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <CurrentUserContext.Provider value={currentUser}>
+    <CurrentUserContext.Provider value={currentUser}>
+      <div className="App">
         <Route exact path={['/', '/movies', '/saved-movies', '/profile']}>
           <Header
             currenPath={location.pathname}
@@ -275,8 +275,8 @@ function App() {
         <Route exact path={['/', '/movies', '/saved-movies']}>
           <Footer />
         </Route>
-      </CurrentUserContext.Provider>
-    </div>
+      </div>
+    </CurrentUserContext.Provider>
   );
 }
 
