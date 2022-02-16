@@ -34,6 +34,13 @@ function FilmsList({ currenPath, movies, onSave, onRemove }) {
     return () => window.removeEventListener('resize', checkWindowWidth);
   }, [windowWidth]);
 
+  const checkSaved = (movie) => {
+    console.log(
+      localStorageHandler.get('savedMovies').includes(String(movie.movieId))
+    );
+    return true;
+  };
+
   React.useEffect(() => {
     if (currenPath === '/movies') {
       setCardsToShow(movies.slice(0, cardsPerPage));
@@ -53,9 +60,7 @@ function FilmsList({ currenPath, movies, onSave, onRemove }) {
             movie={movie}
             onSave={onSave}
             onRemove={onRemove}
-            isSaved={localStorageHandler
-              .get('savedMovies')
-              .includes(String(movie.movieId))}
+            isSaved={checkSaved(movie)}
           />
         ))}
       </ul>

@@ -52,7 +52,6 @@ function MoviesSaved({
 
   React.useEffect(() => {
     if (loggedIn) {
-      console.log('1123');
       const savedList = localStorageHandler.get('savedMovies');
       if (savedList) setSavedMovies(savedList);
     }
