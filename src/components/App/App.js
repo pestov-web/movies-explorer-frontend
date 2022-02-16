@@ -143,7 +143,7 @@ function App() {
         const getMoviesData = getMovieData(movies);
 
         setSavedMovies(mainMovies);
-        // localStorageHandler.save('savedMovies', mainMovies);
+        localStorageHandler.save('savedMoviesList', mainMovies);
         localStorageHandler.save(
           'savedMovies',
           mainMovies.map((movie) => movie.movieId)

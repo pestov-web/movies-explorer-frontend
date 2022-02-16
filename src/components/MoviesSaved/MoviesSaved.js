@@ -52,9 +52,8 @@ function MoviesSaved({
 
   React.useEffect(() => {
     if (loggedIn) {
-      const savedList = localStorageHandler.get('savedMovies');
-      console.log(savedList);
-      if (savedList) setResult(savedList);
+      const savedList = localStorageHandler.get('savedMoviesList');
+      if (savedList) setSavedMovies(savedList);
     }
   }, [currenPath]);
 
@@ -63,6 +62,10 @@ function MoviesSaved({
       handleSubmit();
     }
   }, [values.short]);
+
+  React.useEffect(() => {
+    setResult(savedMovies || []);
+  }, [savedMovies]);
 
   return (
     <main>
