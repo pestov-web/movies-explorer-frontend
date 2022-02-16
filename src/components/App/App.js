@@ -121,7 +121,8 @@ function App() {
         ErrorHandler(err);
       }
     );
-  }, [setLoggedIn]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [setLoggedIn(true)]);
 
   // получем данные
   React.useEffect(() => {
