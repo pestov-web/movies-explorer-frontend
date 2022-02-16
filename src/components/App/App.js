@@ -94,7 +94,7 @@ function App() {
         setLoggedIn(false);
         localStorageHandler.purgeAll();
         setCurrentUser({});
-        setSavedMovies([]);
+
         history.push('/');
       },
       (err) => {
@@ -143,7 +143,7 @@ function App() {
         const getMoviesData = getMovieData(movies);
 
         setSavedMovies(mainMovies);
-
+        // localStorageHandler.save('savedMovies', mainMovies);
         localStorageHandler.save(
           'savedMovies',
           mainMovies.map((movie) => movie.movieId)
@@ -223,6 +223,7 @@ function App() {
             loggedIn={loggedIn}
             currenPath={location.pathname}
             savedMovies={savedMovies}
+            setSavedMovies={setSavedMovies}
             movies={savedMovies}
             onRemove={handleRemoveMovie}
           />

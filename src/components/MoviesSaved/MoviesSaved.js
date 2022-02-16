@@ -6,8 +6,17 @@ import FilmsList from '../FilmsList/FilmsList';
 import Preloader from '../Preloader/Preloader';
 import { filterMovie } from '../../utils/Utils';
 import { NO_RESULT_MSG } from '../../utils/constants';
+import localStorageHandler from '../../utils/LocalStorageHandler';
 
-function MoviesSaved({ currenPath, onSave, onRemove, movies, savedMovies }) {
+function MoviesSaved({
+  loggedIn,
+  currenPath,
+  onSave,
+  onRemove,
+  movies,
+  savedMovies,
+  setSavedMovies,
+}) {
   const [values, setValues] = React.useState({
     title: '',
     short: false,
@@ -40,6 +49,13 @@ function MoviesSaved({ currenPath, onSave, onRemove, movies, savedMovies }) {
 
     setTimeout(() => setIsLoaded(true), 1500);
   };
+
+  React.useEffect(() => {
+    if (loggedIn) {
+      const savedList = localStorageHandler.get('savedMovies');
+      if (savedList) setSavedMovies(savedList);
+    }
+  }, [currenPath]);
 
   React.useEffect(() => {
     if (values.title) {
