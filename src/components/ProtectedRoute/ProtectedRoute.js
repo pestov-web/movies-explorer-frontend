@@ -1,10 +1,13 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
+import localStorageHandler from '../../utils/LocalStorageHandler';
 
 const ProtectedRoute = ({ component: Component, ...props }) => {
+  const isLoggedIn = localStorageHandler.get('loggedIn');
+
   return (
     <Route>
-      {() => (props.loggedIn ? <Component {...props} /> : <Redirect to="/" />)}
+      {() => (isLoggedIn ? <Component {...props} /> : <Redirect to="/" />)}
     </Route>
   );
 };
