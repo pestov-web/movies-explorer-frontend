@@ -29,6 +29,18 @@ function App() {
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [errorMessage, setErrorMessage] = React.useState('');
 
+  React.useEffect(() => {
+    mainApi.checkToken().then(
+      () => {
+        setLoggedIn(true);
+        localStorageHandler.save('loggedIn', true);
+      },
+      (err) => {
+        ErrorHandler(err);
+      }
+    );
+  }, [setLoggedIn]);
+
   function openModal() {
     setIsOpen(true);
   }
@@ -109,18 +121,6 @@ function App() {
       history.push('/movies');
     }
   }, [history, location.pathname, loggedIn]);
-
-  React.useEffect(() => {
-    mainApi.checkToken().then(
-      () => {
-        setLoggedIn(true);
-        localStorageHandler.save('loggedIn', true);
-      },
-      (err) => {
-        ErrorHandler(err);
-      }
-    );
-  }, [setLoggedIn]);
 
   // получем данные
   React.useEffect(() => {
