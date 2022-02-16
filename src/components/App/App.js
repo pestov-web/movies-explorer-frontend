@@ -169,6 +169,7 @@ function App() {
   };
 
   const handleSaveMovie = (movie) => {
+    console.log(movie);
     mainApi
       .saveMovie(movie)
       .then((movie) => {
