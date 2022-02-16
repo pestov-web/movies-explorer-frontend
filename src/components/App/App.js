@@ -137,19 +137,6 @@ function App() {
     }
   }, [loggedIn]);
 
-  React.useEffect(() => {
-    if (loggedIn) {
-      mainApi
-        .getUserInfo()
-        .then((userData) => {
-          setCurrentUser(userData);
-        })
-        .catch((err) => {
-          ErrorHandler(err);
-        });
-    }
-  }, [loggedIn]);
-
   const getMoviesList = () => {
     Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
       .then(([movies, mainMovies]) => {
