@@ -35,8 +35,10 @@ function FilmsList({ currenPath, movies, onSave, onRemove }) {
   }, [windowWidth]);
 
   const checkSaved = (movie) => {
-    console.log(localStorageHandler.get('savedMovies'));
-    console.log(movie.movieId);
+    const filteredMovieArray = localStorageHandler
+      .get('savedMovies')
+      .filter((item) => movie.movieId.includes(item.movieId));
+    console.log(filteredMovieArray);
     return true;
   };
 
