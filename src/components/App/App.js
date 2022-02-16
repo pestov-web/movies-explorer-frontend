@@ -180,12 +180,13 @@ function App() {
       .then((movie) => {
         setSavedMovies([movie, ...savedMovies]);
 
-        const savedList = localStorageHandler.get('savedMovies');
-
+        const savedList = localStorageHandler.get('savedMoviesList');
+        const savedMoviesIds = localStorageHandler.get('savedMovies');
         localStorageHandler.save('savedMovies', [
           movie.movieId.toString(),
-          ...savedList,
+          ...savedMoviesIds,
         ]);
+        localStorageHandler.save('savedMoviesList', [movie, ...savedList]);
       })
       .catch((err) => ErrorHandler(err));
   };
