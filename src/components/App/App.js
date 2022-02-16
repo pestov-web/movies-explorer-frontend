@@ -160,11 +160,12 @@ function App() {
         );
 
         const savedList = localStorageHandler.get('savedMovies');
-        console.log(savedList);
+
         localStorageHandler.save(
           'savedMovies',
           savedList.filter((item) => item._id !== movie._id)
         );
+        console.log(savedList);
       })
       .catch((err) => ErrorHandler(err));
   };
