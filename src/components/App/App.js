@@ -157,7 +157,7 @@ function App() {
         })
         .catch((err) => ErrorHandler(err));
     }
-  }, [loggedIn]);
+  }, [handleLogin]);
 
   const handleRemoveMovie = (movie) => {
     const savedMovie = savedMovies.find(
