@@ -52,10 +52,11 @@ function MoviesSaved({
 
   React.useEffect(() => {
     if (loggedIn) {
+      console.log('1232');
       const savedList = localStorageHandler.get('savedMoviesList');
       if (savedList) setSavedMovies(savedList);
     }
-  }, [loggedIn, setSavedMovies]);
+  }, []);
 
   React.useEffect(() => {
     if (values.title) {
