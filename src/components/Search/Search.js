@@ -38,7 +38,7 @@ function Search({ onSubmit, onChange, value, checkboxClick, checkboxValue }) {
           <input
             className="search__checkbox-input"
             type="checkbox"
-            value={checkboxValue}
+            value="true"
             onClick={checkboxClick}
           />
           <span className="search__checkbox-text">Короткометражки</span>
