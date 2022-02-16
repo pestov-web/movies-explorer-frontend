@@ -33,7 +33,7 @@ function App() {
     mainApi.checkToken().then(
       () => {
         setLoggedIn(true);
-        getMoviesList();
+        history.push(location.pathname);
         localStorageHandler.save('loggedIn', true);
       },
       (err) => {
