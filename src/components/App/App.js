@@ -65,7 +65,6 @@ function App() {
           setCurrentUser(res);
           setLoggedIn(true);
           history.push('/movies');
-          getMoviesList();
         })
         .catch((err) => {
           setErrorMessage(ErrorHandler(err));
@@ -137,7 +136,7 @@ function App() {
     }
   }, [loggedIn]);
 
-  const getMoviesList = () => {
+  React.useEffect(() => {
     Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
       .then(([movies, mainMovies]) => {
         const getMoviesData = getMovieData(movies);
@@ -146,7 +145,7 @@ function App() {
         localStorageHandler.save('initialMovies', getMoviesData);
       })
       .catch((err) => ErrorHandler(err));
-  };
+  }, []);
 
   const handleRemoveMovie = (movie) => {
     const savedMovie = savedMovies.find(
