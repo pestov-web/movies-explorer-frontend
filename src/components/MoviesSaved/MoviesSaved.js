@@ -1,5 +1,5 @@
 import React from 'react';
-import './MoviesSaved.css.css';
+import './MoviesSaved.css';
 import Search from '../Search/Search';
 
 import FilmsList from '../FilmsList/FilmsList';
