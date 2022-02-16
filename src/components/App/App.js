@@ -40,7 +40,7 @@ function App() {
         ErrorHandler(err);
       }
     );
-  }, []);
+  });
 
   function openModal() {
     setIsOpen(true);
@@ -136,7 +136,7 @@ function App() {
           ErrorHandler(err);
         });
     }
-  }, []);
+  });
 
   const getMoviesList = () => {
     Promise.all([moviesApi.getMovies(), mainApi.getMovies()])

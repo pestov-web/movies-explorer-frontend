@@ -61,7 +61,7 @@ function Movies({ loggedIn, currenPath, onSave, onRemove }) {
       const prevValues = localStorageHandler.get('values');
       if (prevValues) setValues(prevValues);
     }
-  }, [loggedIn]);
+  });
 
   return (
     <main>
