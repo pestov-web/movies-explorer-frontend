@@ -33,13 +33,14 @@ function App() {
     mainApi.checkToken().then(
       () => {
         setLoggedIn(true);
+        getMoviesList();
         localStorageHandler.save('loggedIn', true);
       },
       (err) => {
         ErrorHandler(err);
       }
     );
-  }, [setLoggedIn]);
+  }, []);
 
   function openModal() {
     setIsOpen(true);
