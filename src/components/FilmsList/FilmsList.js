@@ -39,7 +39,10 @@ function FilmsList({ currenPath, movies, onSave, onRemove }) {
 
     // let cityId = movieArray.find((el) => el.movieId === movie.movieId);
 
-    console.log(movieArray.find((el) => el.movieId === movie.movieId).movieId);
+    console.log(
+      movieArray.find((el) => el.movieId === movie.movieId).movieId ===
+        movie.movieId
+    );
 
     return true;
   };
