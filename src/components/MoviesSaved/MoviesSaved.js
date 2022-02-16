@@ -54,6 +54,7 @@ function MoviesSaved({
     if (loggedIn) {
       console.log(result);
       const savedList = localStorageHandler.get('savedMoviesList');
+      console.log(savedList);
       if (savedList) setSavedMovies(savedList);
     }
   }, []);
