@@ -141,6 +141,7 @@ function App() {
     Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
       .then(([movies, mainMovies]) => {
         const getMoviesData = getMovieData(movies);
+        setSavedMovies(mainMovies || []);
         localStorageHandler.save('savedMovies', mainMovies || []);
         localStorageHandler.save('initialMovies', getMoviesData);
       })
@@ -175,13 +176,8 @@ function App() {
       .then((movie) => {
         setSavedMovies([movie, ...savedMovies]);
 
-        const savedList = localStorageHandler.get('savedMoviesList');
-        const savedMoviesIds = localStorageHandler.get('savedMovies');
-        localStorageHandler.save('savedMovies', [
-          movie.movieId.toString(),
-          ...savedMoviesIds,
-        ]);
-        localStorageHandler.save('savedMoviesList', [movie, ...savedList]);
+        const savedList = localStorageHandler.get('savedMovies');
+        localStorageHandler.save('savedMovies', [movie, ...savedList]);
       })
       .catch((err) => ErrorHandler(err));
   };
