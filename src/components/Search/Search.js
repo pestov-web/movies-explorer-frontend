@@ -38,6 +38,7 @@ function Search({ onSubmit, onChange, value, checkboxClick, checkboxValue }) {
           <input
             className="search__checkbox-input"
             type="checkbox"
+            checked={true}
             value="true"
             onClick={checkboxClick}
           />
