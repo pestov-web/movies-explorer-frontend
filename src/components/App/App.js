@@ -40,7 +40,7 @@ function App() {
         ErrorHandler(err);
       }
     );
-  });
+  }, []);
 
   function openModal() {
     setIsOpen(true);
