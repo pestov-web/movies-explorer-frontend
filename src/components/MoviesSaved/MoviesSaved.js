@@ -6,17 +6,8 @@ import FilmsList from '../FilmsList/FilmsList';
 import Preloader from '../Preloader/Preloader';
 import { filterMovie } from '../../utils/Utils';
 import { NO_RESULT_MSG } from '../../utils/constants';
-import localStorageHandler from '../../utils/LocalStorageHandler';
 
-function MoviesSaved({
-  currenPath,
-  onSave,
-  onRemove,
-  movies,
-  savedMovies,
-  setLastResult,
-  lastResult,
-}) {
+function MoviesSaved({ currenPath, onSave, onRemove, movies, savedMovies }) {
   const [values, setValues] = React.useState({
     title: '',
     short: false,
@@ -46,26 +37,15 @@ function MoviesSaved({
 
     setIsFound(foundMovies.length);
     setResult(foundMovies);
-    if (currenPath === '/movies') {
-      localStorageHandler.save('lastResult', foundMovies);
-      setLastResult(foundMovies);
-    }
 
     setTimeout(() => setIsLoaded(true), 1500);
   };
 
   React.useEffect(() => {
-    if (values.title || currenPath === '/saved-movies') {
+    if (values.title) {
       handleSubmit();
     }
   }, [values.short]);
-
-  React.useEffect(() => {
-    if (currenPath === '/movies') {
-      setValues({ title: '', short: false });
-      setIsFound(true);
-    }
-  }, [currenPath]);
 
   React.useEffect(() => {
     setResult(savedMovies || []);

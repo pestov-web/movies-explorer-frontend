@@ -18,6 +18,7 @@ import mainApi from '../../utils/MainApi';
 import moviesApi from '../../utils/MoviesApi';
 import { ErrorHandler } from '../../utils/ErrorHandler';
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
+import MoviesSaved from '../MoviesSaved/MoviesSaved';
 
 function App() {
   const location = useLocation();
@@ -31,6 +32,10 @@ function App() {
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [errorMessage, setErrorMessage] = React.useState('');
   const [lastResult, setLastResult] = React.useState([]);
+  const [values, setValues] = React.useState({
+    title: '',
+    short: false,
+  });
 
   function openModal() {
     setIsOpen(true);
@@ -222,17 +227,18 @@ function App() {
             component={Movies}
             loggedIn={loggedIn}
             currenPath={location.pathname}
-            savedMovies={lastResult}
+            lastResult={lastResult}
             movies={initialMovies}
             onSave={handleSaveMovie}
             onRemove={handleRemoveMovie}
             setLastResult={setLastResult}
-            lastResult={lastResult}
+            values={values}
+            setValues={setValues}
           />
           <ProtectedRoute
             exact
             path="/saved-movies"
-            component={Movies}
+            component={MoviesSaved}
             loggedIn={loggedIn}
             currenPath={location.pathname}
             savedMovies={savedMovies}

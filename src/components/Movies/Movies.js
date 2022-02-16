@@ -13,18 +13,14 @@ function Movies({
   onSave,
   onRemove,
   movies,
-  savedMovies,
-  setLastResult,
   lastResult,
+  setLastResult,
+  values,
+  setValues,
 }) {
-  const [values, setValues] = React.useState({
-    title: '',
-    short: false,
-  });
-
   const [isLoaded, setIsLoaded] = React.useState(true);
   const [isFound, setIsFound] = React.useState(true);
-  const [result, setResult] = React.useState(savedMovies || []);
+  const [result, setResult] = React.useState(lastResult || []);
 
   const handleButtonClick = () => {
     if (values.title) {
@@ -46,30 +42,16 @@ function Movies({
 
     setIsFound(foundMovies.length);
     setResult(foundMovies);
-    if (currenPath === '/movies') {
-      localStorageHandler.save('lastResult', foundMovies);
-      setLastResult(foundMovies);
-    }
+
+    localStorageHandler.save('lastResult', foundMovies);
+    setLastResult(foundMovies);
 
     setTimeout(() => setIsLoaded(true), 1500);
   };
 
   React.useEffect(() => {
-    if (values.title || currenPath === '/saved-movies') {
-      handleSubmit();
-    }
-  }, [values.short]);
-
-  React.useEffect(() => {
-    if (currenPath === '/movies') {
-      setValues({ title: '', short: false });
-      setIsFound(true);
-    }
-  }, [currenPath]);
-
-  React.useEffect(() => {
-    setResult(savedMovies || []);
-  }, [savedMovies]);
+    setResult(lastResult || []);
+  }, [lastResult]);
 
   return (
     <main>
