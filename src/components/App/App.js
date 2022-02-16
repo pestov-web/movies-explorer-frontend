@@ -103,15 +103,14 @@ function App() {
     );
   }
 
-  // React.useEffect(() => {
-  //   if (
-  //     loggedIn &&
-  //     (location.pathname === '/signin' || location.pathname === '/signup')
-  //   ) {
-  //     console.log('1233333');
-  //     history.push('/movies');
-  //   }
-  // }, [history, location.pathname, loggedIn]);
+  React.useEffect(() => {
+    if (
+      loggedIn &&
+      (location.pathname === '/signin' || location.pathname === '/signup')
+    ) {
+      history.push('/movies');
+    }
+  }, [history, location.pathname, loggedIn]);
 
   React.useEffect(() => {
     mainApi.checkToken().then(
