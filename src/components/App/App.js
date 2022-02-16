@@ -31,11 +31,6 @@ function App() {
   const [initialMovies, setInitialMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [errorMessage, setErrorMessage] = React.useState('');
-  const [lastResult, setLastResult] = React.useState([]);
-  const [values, setValues] = React.useState({
-    title: '',
-    short: false,
-  });
 
   function openModal() {
     setIsOpen(true);
@@ -101,7 +96,6 @@ function App() {
         localStorageHandler.purgeAll();
         setCurrentUser({});
         setSavedMovies([]);
-        setLastResult([]);
         history.push('/');
       },
       (err) => {
@@ -141,13 +135,6 @@ function App() {
         .catch((err) => {
           ErrorHandler(err);
         });
-    }
-  }, [loggedIn]);
-
-  React.useEffect(() => {
-    if (loggedIn) {
-      const lastSearch = localStorageHandler.get('lastResult');
-      setLastResult(lastSearch);
     }
   }, [loggedIn]);
 
@@ -227,13 +214,9 @@ function App() {
             component={Movies}
             loggedIn={loggedIn}
             currenPath={location.pathname}
-            lastResult={lastResult}
             movies={initialMovies}
             onSave={handleSaveMovie}
             onRemove={handleRemoveMovie}
-            setLastResult={setLastResult}
-            values={values}
-            setValues={setValues}
           />
           <ProtectedRoute
             exact
