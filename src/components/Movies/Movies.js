@@ -7,6 +7,8 @@ import Preloader from '../Preloader/Preloader';
 import { filterMovie } from '../../utils/Utils';
 import { NO_RESULT_MSG } from '../../utils/constants';
 import localStorageHandler from '../../utils/LocalStorageHandler';
+import mainApi from '../../utils/MainApi';
+import { ErrorHandler } from '../../utils/ErrorHandler';
 
 function Movies({ loggedIn, currenPath, onSave, onRemove }) {
   const [isLoaded, setIsLoaded] = React.useState(true);
@@ -70,6 +72,43 @@ function Movies({ loggedIn, currenPath, onSave, onRemove }) {
     }
   }, [currenPath]);
 
+  const handleRemoveMovie = (movie) => {
+    const savedMovie = savedMovies.find(
+      (item) => item.movieId === movie.movieId
+    );
+    mainApi
+      .removeMovie(savedMovie._id)
+      .then(() => {
+        setSavedMovies(
+          savedMovies.filter((item) => item._id !== savedMovie._id)
+        );
+
+        const savedList = localStorageHandler.get('savedMoviesList');
+
+        localStorageHandler.save(
+          'savedMoviesList',
+          savedList.filter((id) => id !== movie.movieId.toString())
+        );
+      })
+      .catch((err) => ErrorHandler(err));
+  };
+
+  const handleSaveMovie = (movie) => {
+    mainApi
+      .saveMovie(movie)
+      .then((movie) => {
+        setSavedMovies([movie, ...savedMovies]);
+
+        const savedList = localStorageHandler.get('savedMoviesList');
+        const savedMoviesIds = localStorageHandler.get('savedMovies');
+        localStorageHandler.save('savedMovies', [
+          movie.movieId.toString(),
+          ...savedMoviesIds,
+        ]);
+        localStorageHandler.save('savedMoviesList', [movie, ...savedList]);
+      })
+      .catch((err) => ErrorHandler(err));
+  };
   return (
     <main>
       <Search

@@ -141,52 +141,8 @@ function App() {
     Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
       .then(([movies, mainMovies]) => {
         const getMoviesData = getMovieData(movies);
-
-        setSavedMovies(mainMovies);
-        localStorageHandler.save('savedMoviesList', mainMovies);
-        localStorageHandler.save(
-          'savedMovies',
-          mainMovies.map((movie) => movie.movieId)
-        );
+        localStorageHandler.save('savedMovies', mainMovies || []);
         localStorageHandler.save('initialMovies', getMoviesData);
-      })
-      .catch((err) => ErrorHandler(err));
-  };
-
-  const handleRemoveMovie = (movie) => {
-    const savedMovie = savedMovies.find(
-      (item) => item.movieId === movie.movieId
-    );
-    mainApi
-      .removeMovie(savedMovie._id)
-      .then(() => {
-        setSavedMovies(
-          savedMovies.filter((item) => item._id !== savedMovie._id)
-        );
-
-        const savedList = localStorageHandler.get('savedMoviesList');
-
-        localStorageHandler.save(
-          'savedMoviesList',
-          savedList.filter((id) => id !== movie.movieId.toString())
-        );
-      })
-      .catch((err) => ErrorHandler(err));
-  };
-
-  const handleSaveMovie = (movie) => {
-    mainApi
-      .saveMovie(movie)
-      .then((movie) => {
-        setSavedMovies([movie, ...savedMovies]);
-
-        const savedList = localStorageHandler.get('savedMoviesList');
-        const savedMoviesIds = localStorageHandler.get('savedMovies');
-        localStorageHandler.save('savedMovies', [
-          movie.movieId.toString(),
-          ...savedMoviesIds,
-        ]);
-        localStorageHandler.save('savedMoviesList', [movie, ...savedList]);
       })
       .catch((err) => ErrorHandler(err));
   };
@@ -214,8 +170,6 @@ function App() {
             component={Movies}
             loggedIn={loggedIn}
             currenPath={location.pathname}
-            onSave={handleSaveMovie}
-            onRemove={handleRemoveMovie}
           />
           <ProtectedRoute
             exact
@@ -223,10 +177,6 @@ function App() {
             component={MoviesSaved}
             loggedIn={loggedIn}
             currenPath={location.pathname}
-            savedMovies={savedMovies}
-            setSavedMovies={setSavedMovies}
-            movies={savedMovies}
-            onRemove={handleRemoveMovie}
           />
           <ProtectedRoute
             exact
