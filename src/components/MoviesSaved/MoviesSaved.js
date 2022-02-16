@@ -55,7 +55,7 @@ function MoviesSaved({
       const savedList = localStorageHandler.get('savedMoviesList');
       if (savedList) setSavedMovies(savedList);
     }
-  }, [currenPath]);
+  }, [loggedIn, setSavedMovies]);
 
   React.useEffect(() => {
     if (values.title) {
