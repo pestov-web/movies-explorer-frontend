@@ -55,10 +55,9 @@ function Movies({ loggedIn, currenPath, onSave, onRemove, movies }) {
   React.useEffect(() => {
     if (loggedIn) {
       const lastSearch = localStorageHandler.get('lastResult');
-      setLastResult(lastSearch);
+      if (lastSearch) setLastResult(lastSearch);
       const prevValues = localStorageHandler.get('values');
-      console.log(prevValues);
-      setValues(prevValues);
+      if (prevValues) setValues(prevValues);
     }
   }, [loggedIn]);
 
