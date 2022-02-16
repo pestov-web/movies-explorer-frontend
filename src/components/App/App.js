@@ -120,7 +120,7 @@ function App() {
         ErrorHandler(err);
       }
     );
-  }, [history]);
+  }, []);
 
   // получем данные
   React.useEffect(() => {
