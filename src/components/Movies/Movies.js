@@ -35,7 +35,7 @@ function Movies({
 
   const handleSubmit = () => {
     setIsLoaded(false);
-
+    console.log(values);
     const foundMovies = movies.filter((movie) =>
       filterMovie(movie, values.title, values.short)
     );

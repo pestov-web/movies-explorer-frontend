@@ -47,10 +47,6 @@ function MoviesSaved({ currenPath, onSave, onRemove, movies, savedMovies }) {
     }
   }, [values.short]);
 
-  React.useEffect(() => {
-    setResult(savedMovies || []);
-  }, [savedMovies]);
-
   return (
     <main>
       <Search

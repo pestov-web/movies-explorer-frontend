@@ -71,7 +71,7 @@ function App() {
           setCurrentUser(res);
           setLoggedIn(true);
           history.push('/movies');
-          getMoviesData();
+          getMoviesList();
         })
         .catch((err) => {
           setErrorMessage(ErrorHandler(err));
@@ -151,7 +151,7 @@ function App() {
     }
   }, [loggedIn]);
 
-  const getMoviesData = () => {
+  const getMoviesList = () => {
     Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
       .then(([movies, mainMovies]) => {
         const getMoviesData = getMovieData(movies);
