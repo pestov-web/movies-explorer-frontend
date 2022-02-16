@@ -74,6 +74,7 @@ function App() {
         .then((res) => {
           setCurrentUser(res);
           setLoggedIn(true);
+          localStorageHandler.save('loggedIn', true);
           getMoviesList();
           history.push('/movies');
         })
