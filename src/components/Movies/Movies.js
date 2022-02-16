@@ -31,7 +31,7 @@ function Movies({ loggedIn, currenPath, onSave, onRemove, movies }) {
 
   const handleSubmit = () => {
     setIsLoaded(false);
-    console.log(values);
+    console.log(movies);
     const foundMovies = movies.filter((movie) =>
       filterMovie(movie, values.title, values.short)
     );
