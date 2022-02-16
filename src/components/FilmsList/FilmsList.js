@@ -38,7 +38,7 @@ function FilmsList({ currenPath, movies, onSave, onRemove }) {
     const movieArray = localStorageHandler.get('savedMovies');
     const keys = Object.keys(movieArray);
 
-    console.log(keys);
+    console.log(keys.movieId);
 
     return true;
   };
