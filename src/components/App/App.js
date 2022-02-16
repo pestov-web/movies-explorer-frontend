@@ -24,10 +24,9 @@ function App() {
   const location = useLocation();
   const history = useHistory();
 
-  const [modalIsOpen, setIsOpen] = React.useState(false);
-
-  const [currentUser, setCurrentUser] = React.useState({});
   const [loggedIn, setLoggedIn] = React.useState(false);
+  const [currentUser, setCurrentUser] = React.useState({});
+  const [modalIsOpen, setIsOpen] = React.useState(false);
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [errorMessage, setErrorMessage] = React.useState('');
 
@@ -215,8 +214,8 @@ function App() {
           <ProtectedRoute
             exact
             path="/movies"
-            component={Movies}
             loggedIn={loggedIn}
+            component={Movies}
             currenPath={location.pathname}
             onSave={handleSaveMovie}
             onRemove={handleRemoveMovie}
@@ -224,8 +223,8 @@ function App() {
           <ProtectedRoute
             exact
             path="/saved-movies"
-            component={MoviesSaved}
             loggedIn={loggedIn}
+            component={MoviesSaved}
             currenPath={location.pathname}
             savedMovies={savedMovies}
             setSavedMovies={setSavedMovies}
@@ -235,8 +234,8 @@ function App() {
           <ProtectedRoute
             exact
             path="/profile"
-            component={ProfileUpdate}
             loggedIn={loggedIn}
+            component={ProfileUpdate}
             currentUser={currentUser}
             onSignOut={handleSingOut}
             onFormSubmit={handleUpdateUser}
