@@ -50,13 +50,13 @@ function MoviesSaved({
     setTimeout(() => setIsLoaded(true), 1500);
   };
 
-  React.useEffect(() => {
-    if (loggedIn) {
-      const savedList = localStorageHandler.get('savedMovies');
-      console.log(savedList);
-      if (savedList) setSavedMovies(savedList);
-    }
-  }, [currenPath]);
+  // React.useEffect(() => {
+  //   if (loggedIn) {
+  //     const savedList = localStorageHandler.get('savedMovies');
+  //     console.log(savedList);
+  //     if (savedList) setSavedMovies(savedList);
+  //   }
+  // }, [currenPath]);
 
   React.useEffect(() => {
     if (values.title) {
