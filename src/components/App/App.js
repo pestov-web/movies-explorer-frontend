@@ -115,12 +115,13 @@ function App() {
     mainApi.checkToken().then(
       () => {
         setLoggedIn(true);
+        localStorageHandler.save('loggedIn', true);
       },
       (err) => {
         ErrorHandler(err);
       }
     );
-  }, []);
+  });
 
   // получем данные
   React.useEffect(() => {
