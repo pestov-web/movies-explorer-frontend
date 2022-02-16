@@ -37,7 +37,7 @@ function FilmsList({ currenPath, movies, onSave, onRemove }) {
   const checkSaved = (movie) => {
     const movieArray = localStorageHandler.get('savedMovies');
 
-    let cityId = movieArray.find((el) => el.movieId === movie.movieId).id;
+    let cityId = movieArray.find((el) => el.movieId === movie.movieId);
 
     console.log(cityId);
 
