@@ -108,6 +108,7 @@ function App() {
       loggedIn &&
       (location.pathname === '/signin' || location.pathname === '/signup')
     ) {
+      console.log('1233333');
       history.push('/movies');
     }
   }, [history, location.pathname, loggedIn]);
@@ -178,7 +179,6 @@ function App() {
           'savedMovies',
           savedList.filter((item) => item._id !== movie._id)
         );
-        console.log(savedList);
       })
       .catch((err) => ErrorHandler(err));
   };
