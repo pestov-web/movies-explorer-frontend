@@ -61,11 +61,11 @@ function App() {
     if (data.email && data.password) {
       mainApi
         .authorize(data)
-        .then(async (res) => {
+        .then((res) => {
           setCurrentUser(res);
           setLoggedIn(true);
+          getMoviesList();
           history.push('/movies');
-          await getMoviesList();
         })
         .catch((err) => {
           setErrorMessage(ErrorHandler(err));
