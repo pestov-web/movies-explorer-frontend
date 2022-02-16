@@ -66,6 +66,7 @@ function App() {
           setCurrentUser(res);
           setLoggedIn(true);
           history.push('/movies');
+          getMoviesData();
         })
         .catch((err) => {
           setErrorMessage(ErrorHandler(err));
@@ -140,24 +141,26 @@ function App() {
 
   React.useEffect(() => {
     if (loggedIn) {
-      Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
-        .then(([movies, mainMovies]) => {
-          const getMoviesData = getMovieData(movies);
-
-          setInitialMovies(getMoviesData);
-          setSavedMovies(mainMovies);
-
-          localStorageHandler.save(
-            'savedMovies',
-            mainMovies.map((movie) => movie.movieId)
-          );
-
-          const lastSearch = localStorageHandler.get('lastResult');
-          setLastResult(lastSearch);
-        })
-        .catch((err) => ErrorHandler(err));
+      const lastSearch = localStorageHandler.get('lastResult');
+      setLastResult(lastSearch);
     }
-  }, [handleLogin]);
+  }, [loggedIn]);
+
+  const getMoviesData = () => {
+    Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
+      .then(([movies, mainMovies]) => {
+        const getMoviesData = getMovieData(movies);
+
+        setInitialMovies(getMoviesData);
+        setSavedMovies(mainMovies);
+
+        localStorageHandler.save(
+          'savedMovies',
+          mainMovies.map((movie) => movie.movieId)
+        );
+      })
+      .catch((err) => ErrorHandler(err));
+  };
 
   const handleRemoveMovie = (movie) => {
     const savedMovie = savedMovies.find(
