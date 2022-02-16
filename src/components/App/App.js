@@ -73,9 +73,9 @@ function App() {
         .authorize(data)
         .then((res) => {
           setCurrentUser(res);
+          getMoviesList();
           setLoggedIn(true);
           localStorageHandler.save('loggedIn', true);
-          getMoviesList();
           history.push('/movies');
         })
         .catch((err) => {
@@ -135,7 +135,7 @@ function App() {
           ErrorHandler(err);
         });
     }
-  }, [loggedIn]);
+  }, []);
 
   const getMoviesList = () => {
     Promise.all([moviesApi.getMovies(), mainApi.getMovies()])
