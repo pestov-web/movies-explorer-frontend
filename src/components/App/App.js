@@ -111,7 +111,7 @@ function App() {
     }
   }, [history, location.pathname, loggedIn]);
 
-  React.useLayoutEffect(() => {
+  React.useEffect(() => {
     mainApi.checkToken().then(
       () => {
         setLoggedIn(true);
@@ -121,7 +121,7 @@ function App() {
         ErrorHandler(err);
       }
     );
-  });
+  }, [setLoggedIn]);
 
   // получем данные
   React.useEffect(() => {
