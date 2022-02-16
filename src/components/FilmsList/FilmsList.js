@@ -35,11 +35,12 @@ function FilmsList({ currenPath, movies, onSave, onRemove }) {
   }, [windowWidth]);
 
   const checkSaved = (movie) => {
-    const mId = movie.movieId;
-    console.log(mId);
     const movieArray = localStorageHandler.get('savedMovies');
-    console.log(movieArray);
-    movieArray.filter((item) => console.log(item));
+    const indexedData = new Map(movieArray.map((el) => [el.movieId, el]));
+
+    console.log(
+      movie.movieId.map((movieId) => indexedData.get(movieId)).filter((e) => e)
+    );
 
     return true;
   };
