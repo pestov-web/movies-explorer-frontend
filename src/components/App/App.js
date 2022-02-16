@@ -28,7 +28,6 @@ function App() {
 
   const [currentUser, setCurrentUser] = React.useState({});
   const [loggedIn, setLoggedIn] = React.useState(false);
-  const [initialMovies, setInitialMovies] = React.useState([]);
   const [savedMovies, setSavedMovies] = React.useState([]);
   const [errorMessage, setErrorMessage] = React.useState('');
 
@@ -143,13 +142,13 @@ function App() {
       .then(([movies, mainMovies]) => {
         const getMoviesData = getMovieData(movies);
 
-        setInitialMovies(getMoviesData);
         setSavedMovies(mainMovies);
 
         localStorageHandler.save(
           'savedMovies',
           mainMovies.map((movie) => movie.movieId)
         );
+        localStorageHandler.save('initialMovies', getMoviesData);
       })
       .catch((err) => ErrorHandler(err));
   };
@@ -214,7 +213,6 @@ function App() {
             component={Movies}
             loggedIn={loggedIn}
             currenPath={location.pathname}
-            movies={initialMovies}
             onSave={handleSaveMovie}
             onRemove={handleRemoveMovie}
           />

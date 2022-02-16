@@ -8,11 +8,12 @@ import { filterMovie } from '../../utils/Utils';
 import { NO_RESULT_MSG } from '../../utils/constants';
 import localStorageHandler from '../../utils/LocalStorageHandler';
 
-function Movies({ loggedIn, currenPath, onSave, onRemove, movies }) {
+function Movies({ loggedIn, currenPath, onSave, onRemove }) {
   const [isLoaded, setIsLoaded] = React.useState(true);
   const [isFound, setIsFound] = React.useState(true);
   const [result, setResult] = React.useState(lastResult || []);
   const [lastResult, setLastResult] = React.useState([]);
+  const [initialMovies, setInitialMovies] = React.useState([]);
   const [values, setValues] = React.useState({
     title: '',
     short: false,
@@ -31,8 +32,8 @@ function Movies({ loggedIn, currenPath, onSave, onRemove, movies }) {
 
   const handleSubmit = () => {
     setIsLoaded(false);
-    console.log(movies);
-    const foundMovies = movies.filter((movie) =>
+    console.log(initialMovies);
+    const foundMovies = initialMovies.filter((movie) =>
       filterMovie(movie, values.title, values.short)
     );
 
@@ -54,6 +55,8 @@ function Movies({ loggedIn, currenPath, onSave, onRemove, movies }) {
 
   React.useEffect(() => {
     if (loggedIn) {
+      const movies = localStorageHandler.get('initialMovies');
+      setInitialMovies(movies);
       const lastSearch = localStorageHandler.get('lastResult');
       if (lastSearch) setLastResult(lastSearch);
       const prevValues = localStorageHandler.get('values');
