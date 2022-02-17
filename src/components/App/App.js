@@ -157,6 +157,7 @@ function App() {
     mainApi
       .removeMovie(savedMovie._id)
       .then(() => {
+        console.log(savedMovie);
         setSavedMovies(
           savedMovies.filter((item) => item._id !== savedMovie._id)
         );
@@ -172,7 +173,6 @@ function App() {
   };
 
   const handleSaveMovie = (movie) => {
-    console.log(movie);
     mainApi
       .saveMovie(movie)
       .then((movie) => {
