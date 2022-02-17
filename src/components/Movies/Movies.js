@@ -8,12 +8,18 @@ import { filterMovie } from '../../utils/Utils';
 import { NO_RESULT_MSG } from '../../utils/constants';
 import localStorageHandler from '../../utils/LocalStorageHandler';
 
-function Movies({ loggedIn, currenPath, onSave, onRemove, movies }) {
+function Movies({
+  loggedIn,
+  currenPath,
+  onSave,
+  onRemove,
+  initialMovies,
+  setInitialMovies,
+}) {
   const [isLoaded, setIsLoaded] = React.useState(true);
   const [isFound, setIsFound] = React.useState(true);
   const [result, setResult] = React.useState(lastResult || []);
   const [lastResult, setLastResult] = React.useState([]);
-  const [initialMovies, setInitialMovies] = React.useState(movies);
   const [values, setValues] = React.useState({
     title: '',
     short: false,

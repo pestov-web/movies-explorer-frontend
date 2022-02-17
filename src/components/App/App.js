@@ -27,7 +27,7 @@ function App() {
   const [currentUser, setCurrentUser] = React.useState({});
   const [modalIsOpen, setIsOpen] = React.useState(false);
   const [savedMovies, setSavedMovies] = React.useState([]);
-  const [movies, setMovies] = React.useState([]);
+  const [initialMovies, setInitialMovies] = React.useState([]);
   const [errorMessage, setErrorMessage] = React.useState('');
 
   React.useEffect(() => {
@@ -144,7 +144,7 @@ function App() {
       .then(([movies, mainMovies]) => {
         const getMoviesData = getMovieData(movies);
         setSavedMovies(mainMovies || []);
-        setMovies(getMoviesData);
+        setInitialMovies(getMoviesData);
         localStorageHandler.save('savedMovies', mainMovies || []);
         localStorageHandler.save('initialMovies', getMoviesData);
       })
@@ -210,7 +210,8 @@ function App() {
             currenPath={location.pathname}
             onSave={handleSaveMovie}
             onRemove={handleRemoveMovie}
-            movies={movies}
+            initialMovies={initialMovies}
+            setInitialMovies={setInitialMovies}
           />
           <ProtectedRoute
             exact
