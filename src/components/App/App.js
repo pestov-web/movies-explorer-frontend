@@ -166,7 +166,7 @@ function App() {
 
         localStorageHandler.save(
           'savedMovies',
-          savedList.filter((item) => item._id !== movie._id)
+          savedList.filter((item) => item._id !== savedMovie._id)
         );
       })
       .catch((err) => ErrorHandler(err));
