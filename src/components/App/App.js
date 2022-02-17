@@ -157,7 +157,7 @@ function App() {
     mainApi
       .removeMovie(savedMovie._id)
       .then(() => {
-        console.log(savedMovie);
+        console.log(movie._id);
         setSavedMovies(
           savedMovies.filter((item) => item._id !== savedMovie._id)
         );
