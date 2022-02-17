@@ -34,14 +34,13 @@ function App() {
     mainApi.checkToken().then(
       () => {
         setLoggedIn(true);
-        history.push(location.pathname);
         localStorageHandler.save('loggedIn', true);
       },
       (err) => {
         ErrorHandler(err);
       }
     );
-  }, [history, location.pathname]);
+  }, []);
 
   function openModal() {
     setIsOpen(true);
