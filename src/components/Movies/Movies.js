@@ -13,7 +13,7 @@ function Movies({ loggedIn, currenPath, onSave, onRemove, movies }) {
   const [isFound, setIsFound] = React.useState(true);
   const [result, setResult] = React.useState(lastResult || []);
   const [lastResult, setLastResult] = React.useState([]);
-  const [initialMovies, setInitialMovies] = React.useState(movies || []);
+  const [initialMovies, setInitialMovies] = React.useState(movies);
   const [values, setValues] = React.useState({
     title: '',
     short: false,
