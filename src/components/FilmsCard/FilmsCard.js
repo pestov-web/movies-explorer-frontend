@@ -43,6 +43,12 @@ export default function FilmsCard({
 
   const handleRemove = () => {
     onRemove(movie);
+    console.log(movie);
+    setSaved(false);
+  };
+  const handleRemove2 = () => {
+    onRemove(movie);
+    console.log(movie);
     setSaved(false);
   };
 
@@ -61,7 +67,7 @@ export default function FilmsCard({
           />
         ) : saved ? (
           <button
-            onClick={handleRemove}
+            onClick={handleRemove2}
             className="films__add-button films__add-button_checked  button"
           />
         ) : (
