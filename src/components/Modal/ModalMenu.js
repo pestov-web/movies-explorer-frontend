@@ -1,6 +1,7 @@
 import "./ModalMenu.css";
 import Modal from "react-modal";
 import { NavLink } from "react-router-dom";
+Modal.setAppElement("body");
 
 function ModalMenu({ modalIsOpen, afterOpenModal, closeModal, currenPath }) {
   return (

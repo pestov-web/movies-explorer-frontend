@@ -1,7 +1,8 @@
-import "./Logo.css";
+import './Logo.css';
+import { Link } from 'react-router-dom';
 
 function Logo() {
-  return <a href="/" className="logo link"></a>;
+  return <Link to="/" className="logo link"></Link>;
 }
 
 export default Logo;

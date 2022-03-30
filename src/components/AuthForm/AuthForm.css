@@ -77,10 +77,19 @@
 
 .auth-form__goto {
   display: flex;
+  position: relative;
   gap: 7px;
   padding-top: 14px;
   width: 100%;
   justify-content: center;
+}
+.auth-form__error-text {
+  position: absolute;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 15px;
+  top: -70px;
+  color: #ff4062;
 }
 .auth-form__goto-text {
   font-weight: normal;
@@ -126,6 +135,7 @@
     line-height: 17px;
   }
 }
+
 @media screen and (min-width: 1024px) {
   .auth-form {
     padding-top: 70px;

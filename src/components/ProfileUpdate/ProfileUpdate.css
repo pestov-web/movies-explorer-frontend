@@ -35,26 +35,42 @@
 }
 
 .profile-update__form::after {
-  content: "";
+  content: '';
   display: block;
   border-bottom: 1px solid #e8e8e8;
   width: 100%;
   position: absolute;
   top: 94px;
 }
-.profile-update__input {
-  box-sizing: border-box;
+.profile-update__label {
   font-weight: 500;
   font-size: 11px;
   line-height: 13px;
-  max-width: 410px;
-  height: 20px;
+  color: #000000;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   width: 100%;
-  position: relative;
-  padding: 0;
+  align-items: center;
+  padding-bottom: 16px;
+  height: 14px;
+}
+.profile-update__input {
+  height: 20px;
+  box-sizing: border-box;
+  background: transparent;
   border: none;
+  font-weight: normal;
+  font-size: 11px;
+  line-height: 13px;
+  text-align: right;
+  color: #000000;
+  padding: 0;
+  width: 80%;
   outline: none;
-  background: #fff;
+}
+.profile-update__input:focus {
+  outline: none;
 }
 
 .profile-update__input::placeholder {
@@ -86,7 +102,9 @@
   line-height: 15px;
   padding-top: 348px;
 }
-
+.profile-update__button-submit:disabled {
+  background: #ffffff;
+}
 .profile-update__button-logout {
   border: none;
   background: #fff;
